@@ -358,7 +358,7 @@ def generate_html():
     <nav class="nav-container">
         <div class="nav-header">
             <div class="nav-title">ESG EXPORT INSIGHT</div>
-            <div class="update-badge">📅 업데이트: """ + datetime.now().strftime("%Y-%m-%d") + """ | ✓ 검증됨</div>
+            <div class="update-badge" id="updateBadge">📅 업데이트: 로딩중... | ✓ 검증됨</div>
         </div>
         <div class="nav-tabs" id="navTabs"></div>
     </nav>
@@ -370,11 +370,21 @@ def generate_html():
         const sectionsData = """ + json.dumps(sections, ensure_ascii=False) + """;
 
         function initApp() {
+            updateDateBadge();
             renderNavTabs();
             renderSections();
             if (sectionsData.length > 0) {
                 switchSection(sectionsData[0].id, document.querySelector('.nav-tab'));
             }
+        }
+
+        function updateDateBadge() {
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+            const formattedDate = `${year}-${month}-${day}`;
+            document.getElementById('updateBadge').textContent = `📅 업데이트: ${formattedDate} | ✓ 검증됨`;
         }
 
         function renderNavTabs() {
