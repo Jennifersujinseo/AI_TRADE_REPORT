@@ -264,7 +264,7 @@ def generate_html():
         }
 
         .insight-content {
-            font-size: 15px;
+            font-size: 16px;
             color: #666;
             line-height: 1.8;
             margin-bottom: 15px;
