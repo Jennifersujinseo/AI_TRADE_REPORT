@@ -421,7 +421,7 @@ def generate_html():
                 // 인사이트
                 if (section.keyInsights && section.keyInsights.length > 0) {
                     html += '<div class="insights-section"><div class="insights-title">📊 핵심 인사이트</div>';
-                    section.keyInsights.forEach(insight => {
+                    section.keyInsights.forEach((insight, index) => {
                         html += `
                             <div class="insight-item">
                                 <div class="insight-title">${insight.title}</div>
