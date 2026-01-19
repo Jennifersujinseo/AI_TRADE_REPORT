@@ -6,8 +6,7 @@ def generate_html():
     """완성된 HTML 파일 자동 생성"""
     
     # 데이터 수집
-    data = fetch_section_data()
-    sections = data['sections']
+    sections = fetch_section_data()
     
     # HTML 헤더와 스타일
     html_content = """<!DOCTYPE html>
