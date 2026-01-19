@@ -1,6 +1,6 @@
 import json
 from datetime import datetime
-from fetch_data import fetch_section_data
+from fetch_data import fetch_section_data, get_exchange_rate_trend
 
 def generate_html():
     """완성된 HTML 파일 자동 생성"""
@@ -375,6 +375,84 @@ def generate_html():
             if (sectionsData.length > 0) {
                 switchSection(sectionsData[0].id, document.querySelector('.nav-tab'));
             }
+            // 환율 차트 렌더링
+            setTimeout(() => {
+                renderExchangeRateChart();
+            }, 500);
+        }
+        
+        function renderExchangeRateChart() {
+            const canvas = document.getElementById('exchangeRateChart');
+            if (!canvas) return;
+            
+            // 지난 30일 환율 데이터
+            const trendData = """ + json.dumps(get_exchange_rate_trend(), ensure_ascii=False) + """;
+            
+            if (!trendData || trendData.length === 0) return;
+            
+            const labels = trendData.map(d => d.date);
+            const rates = trendData.map(d => d.rate);
+            
+            new Chart(canvas, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'USD/KRW 환율',
+                        data: rates,
+                        borderColor: '#0066cc',
+                        backgroundColor: 'rgba(0, 102, 204, 0.1)',
+                        borderWidth: 2,
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 4,
+                        pointBackgroundColor: '#0066cc',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                font: { size: 14, weight: 'bold' },
+                                color: '#333'
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: '지난 30일 환율 변동 추세',
+                            font: { size: 16, weight: 'bold' }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            min: 1400,
+                            max: 1500,
+                            ticks: {
+                                font: { size: 12 },
+                                color: '#666'
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                font: { size: 12 },
+                                color: '#666'
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        }
+                    }
+                }
+            });
         }
 
         function updateDateBadge() {
@@ -425,6 +503,15 @@ def generate_html():
                         `;
                     });
                     html += '</div>';
+                }
+                
+                // 환율 섹션 차트
+                if (section.id === 'daily-exchange-rate') {
+                    html += `
+                        <div class="chart-container" style="position: relative; height: 300px; margin: 30px 0;">
+                            <canvas id="exchangeRateChart"></canvas>
+                        </div>
+                    `;
                 }
                 
                 // 인사이트

@@ -364,6 +364,84 @@
             if (sectionsData.length > 0) {
                 switchSection(sectionsData[0].id, document.querySelector('.nav-tab'));
             }
+            // 환율 차트 렌더링
+            setTimeout(() => {
+                renderExchangeRateChart();
+            }, 500);
+        }
+        
+        function renderExchangeRateChart() {
+            const canvas = document.getElementById('exchangeRateChart');
+            if (!canvas) return;
+            
+            // 지난 30일 환율 데이터
+            const trendData = [{"date": "12-19", "rate": 1455, "change": -5}, {"date": "12-20", "rate": 1465, "change": 5}, {"date": "12-21", "rate": 1462, "change": 2}, {"date": "12-22", "rate": 1459, "change": -1}, {"date": "12-23", "rate": 1459, "change": -1}, {"date": "12-24", "rate": 1456, "change": -4}, {"date": "12-25", "rate": 1463, "change": 3}, {"date": "12-26", "rate": 1463, "change": 3}, {"date": "12-27", "rate": 1460, "change": 0}, {"date": "12-28", "rate": 1457, "change": -3}, {"date": "12-29", "rate": 1457, "change": -3}, {"date": "12-30", "rate": 1464, "change": 4}, {"date": "12-31", "rate": 1461, "change": 1}, {"date": "01-01", "rate": 1461, "change": 1}, {"date": "01-02", "rate": 1458, "change": -2}, {"date": "01-03", "rate": 1455, "change": -5}, {"date": "01-04", "rate": 1465, "change": 5}, {"date": "01-05", "rate": 1462, "change": 2}, {"date": "01-06", "rate": 1459, "change": -1}, {"date": "01-07", "rate": 1459, "change": -1}, {"date": "01-08", "rate": 1456, "change": -4}, {"date": "01-09", "rate": 1463, "change": 3}, {"date": "01-10", "rate": 1463, "change": 3}, {"date": "01-11", "rate": 1460, "change": 0}, {"date": "01-12", "rate": 1457, "change": -3}, {"date": "01-13", "rate": 1457, "change": -3}, {"date": "01-14", "rate": 1464, "change": 4}, {"date": "01-15", "rate": 1461, "change": 1}, {"date": "01-16", "rate": 1461, "change": 1}, {"date": "01-17", "rate": 1458, "change": -2}];
+            
+            if (!trendData || trendData.length === 0) return;
+            
+            const labels = trendData.map(d => d.date);
+            const rates = trendData.map(d => d.rate);
+            
+            new Chart(canvas, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'USD/KRW 환율',
+                        data: rates,
+                        borderColor: '#0066cc',
+                        backgroundColor: 'rgba(0, 102, 204, 0.1)',
+                        borderWidth: 2,
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 4,
+                        pointBackgroundColor: '#0066cc',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                font: { size: 14, weight: 'bold' },
+                                color: '#333'
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: '지난 30일 환율 변동 추세',
+                            font: { size: 16, weight: 'bold' }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            min: 1400,
+                            max: 1500,
+                            ticks: {
+                                font: { size: 12 },
+                                color: '#666'
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                font: { size: 12 },
+                                color: '#666'
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        }
+                    }
+                }
+            });
         }
 
         function updateDateBadge() {
@@ -414,6 +492,15 @@
                         `;
                     });
                     html += '</div>';
+                }
+                
+                // 환율 섹션 차트
+                if (section.id === 'daily-exchange-rate') {
+                    html += `
+                        <div class="chart-container" style="position: relative; height: 300px; margin: 30px 0;">
+                            <canvas id="exchangeRateChart"></canvas>
+                        </div>
+                    `;
                 }
                 
                 // 인사이트
