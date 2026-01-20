@@ -84,6 +84,9 @@ def get_exchange_rate() -> Dict[str, Any]:
 def fetch_section_data():
     """13개 섹션별 최신 데이터 수집 - 각 섹션 3개 이상의 인사이트"""
     
+    # 오늘 날짜
+    today = datetime.now().strftime("%Y-%m-%d")
+    
     # 실시간 환율 데이터 수집
     exchange_rate_data = get_exchange_rate()
     current_rate = exchange_rate_data["usd_krw"]
@@ -93,7 +96,7 @@ def fetch_section_data():
             "id": "overview",
             "title": "개요",
             "confidence": "100%",
-            "content": "2026년 글로벌 무역 환경은 AI 기술의 전방위적 확산, ESG 규제의 본격화, 그리고 지정학적 리스크에 따른 공급망 재편이라는 세 가지 핵심 동인에 의해 재편되고 있습니다.",
+            "content": f"[{today} 갱신] 2026년 글로벌 무역 환경은 AI 기술의 전방위적 확산, ESG 규제의 본격화, 그리고 지정학적 리스크에 따른 공급망 재편이라는 세 가지 핵심 동인에 의해 재편되고 있습니다.",
             "keyInsights": [
                 {
                     "title": "1. AI 기반 무역 가속화",
@@ -309,7 +312,7 @@ def fetch_section_data():
             "id": "legal-regulations",
             "title": "법적규제",
             "confidence": "96%",
-            "content": "2026년 글로벌 규제 환경은 AI, ESG, 데이터 보호를 중심으로 급속히 강화되고 있습니다. EU의 AI Act, 미국의 AI Executive Order, 중국의 AI 규제 등이 글로벌 기업들의 비즈니스 전략에 직접적인 영향을 미치고 있습니다.",
+            "content": f"[{today} 갱신] 2026년 글로벌 규제 환경은 AI, ESG, 데이터 보호를 중심으로 급속히 강화되고 있습니다. EU의 AI Act, 미국의 AI Executive Order, 중국의 AI 규제 등이 글로벌 기업들의 비즈니스 전략에 직접적인 영향을 미치고 있습니다.",
             "keyInsights": [
                 {
                     "title": "1. EU AI Act의 본격 시행",
@@ -381,7 +384,7 @@ def fetch_section_data():
             "id": "overseas-exhibitions",
             "title": "해외전시회",
             "confidence": "92%",
-            "content": "2026년 글로벌 전시회 시장은 AI, ESG, 반도체 관련 이벤트가 중심이 되고 있습니다. CES, MWC, IFA 등 주요 국제 전시회들이 AI 기술 전시를 확대하고 있으며, 이는 기업들의 제품 출시 및 마케팅 전략에 중요한 역할을 하고 있습니다.",
+            "content": f"[{today} 갱신] 2026년 글로벌 전시회 시장은 AI, ESG, 반도체 관련 이벤트가 중심이 되고 있습니다. CES, MWC, IFA 등 주요 국제 전시회들이 AI 기술 전시를 확대하고 있으며, 이는 기업들의 제품 출시 및 마케팅 전략에 중요한 역할을 하고 있습니다.",
             "keyInsights": [
                 {
                     "title": "1. CES 2026에서의 AI 기술 전시",
