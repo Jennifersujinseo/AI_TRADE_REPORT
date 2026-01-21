@@ -80,14 +80,15 @@ def generate_html():
         }
         
         nav {
-            background: white;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             padding: 15px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             margin-bottom: 30px;
             border-radius: 10px;
             position: sticky;
             top: 0;
             z-index: 100;
+            border: 1px solid #e0e7ff;
         }
         
         .nav-content {
@@ -95,24 +96,36 @@ def generate_html():
             margin: 0 auto;
             padding: 0 20px;
             display: flex;
-            gap: 20px;
+            gap: 15px;
             overflow-x: auto;
             flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
         }
         
         nav a {
             color: #0066cc;
             text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
+            padding: 12px 18px;
+            border-radius: 6px;
             transition: all 0.3s ease;
             white-space: nowrap;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.95em;
+            display: inline-block;
+            border: 1px solid transparent;
         }
         
         nav a:hover {
-            background: #e3f2fd;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
             color: #0044aa;
+            border: 1px solid #0066cc;
+            box-shadow: 0 2px 6px rgba(0,102,204,0.2);
+        }
+        
+        nav a:active {
+            background: linear-gradient(135deg, #90caf9 0%, #64b5f6 100%);
+            color: #003d99;
         }
         
         .section {

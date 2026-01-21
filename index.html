@@ -56,14 +56,15 @@
         }
         
         nav {
-            background: white;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             padding: 15px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             margin-bottom: 30px;
             border-radius: 10px;
             position: sticky;
             top: 0;
             z-index: 100;
+            border: 1px solid #e0e7ff;
         }
         
         .nav-content {
@@ -71,24 +72,36 @@
             margin: 0 auto;
             padding: 0 20px;
             display: flex;
-            gap: 20px;
+            gap: 15px;
             overflow-x: auto;
             flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
         }
         
         nav a {
             color: #0066cc;
             text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
+            padding: 12px 18px;
+            border-radius: 6px;
             transition: all 0.3s ease;
             white-space: nowrap;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.95em;
+            display: inline-block;
+            border: 1px solid transparent;
         }
         
         nav a:hover {
-            background: #e3f2fd;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
             color: #0044aa;
+            border: 1px solid #0066cc;
+            box-shadow: 0 2px 6px rgba(0,102,204,0.2);
+        }
+        
+        nav a:active {
+            background: linear-gradient(135deg, #90caf9 0%, #64b5f6 100%);
+            color: #003d99;
         }
         
         .section {
@@ -420,12 +433,12 @@
             <div class="source-section">
                 <div class="source-title">📌 출처 및 링크</div>
                 <ul class="source-list">
-                    <li class='source-item'>OECD, WTO, IMF</li>
-                    <li class='source-item'>McKinsey Global Institute, 산업통상자원부</li>
-                    <li class='source-item'><a href='https://www.mckinsey.com' class='source-link' target='_blank'>McKinsey Global Institute, 산업통상자원부</a></li>
-                    <li class='source-item'><a href='https://www.oecd.org' class='source-link' target='_blank'>OECD, WTO, IMF</a></li>
                     <li class='source-item'>WTO, 한국무역협회, 관세청</li>
                     <li class='source-item'><a href='https://www.kita.net' class='source-link' target='_blank'>WTO, 한국무역협회, 관세청</a></li>
+                    <li class='source-item'><a href='https://www.oecd.org' class='source-link' target='_blank'>OECD, WTO, IMF</a></li>
+                    <li class='source-item'>McKinsey Global Institute, 산업통상자원부</li>
+                    <li class='source-item'>OECD, WTO, IMF</li>
+                    <li class='source-item'><a href='https://www.mckinsey.com' class='source-link' target='_blank'>McKinsey Global Institute, 산업통상자원부</a></li>
                 </ul>
             </div>
         </section>
@@ -528,12 +541,12 @@
             <div class="source-section">
                 <div class="source-title">📌 출처 및 링크</div>
                 <ul class="source-list">
-                    <li class='source-item'><a href='https://www.eia.gov' class='source-link' target='_blank'>EIA, OPEC, Bain & Company</a></li>
                     <li class='source-item'><a href='https://www.fao.org' class='source-link' target='_blank'>FAO, USDA, Deloitte</a></li>
                     <li class='source-item'>EIA, OPEC, Bain & Company</li>
-                    <li class='source-item'>FAO, USDA, Deloitte</li>
                     <li class='source-item'>USGS, 중국 자연자원부, Accenture</li>
                     <li class='source-item'><a href='https://www.usgs.gov' class='source-link' target='_blank'>USGS, 중국 자연자원부, Accenture</a></li>
+                    <li class='source-item'>FAO, USDA, Deloitte</li>
+                    <li class='source-item'><a href='https://www.eia.gov' class='source-link' target='_blank'>EIA, OPEC, Bain & Company</a></li>
                 </ul>
             </div>
         </section>
@@ -636,10 +649,10 @@
             <div class="source-section">
                 <div class="source-title">📌 출처 및 링크</div>
                 <ul class="source-list">
-                    <li class='source-item'><a href='https://www.bok.or.kr' class='source-link' target='_blank'>한국은행, IMF, 금융통화위원회</a></li>
-                    <li class='source-item'>한국은행, 금융감독원</li>
-                    <li class='source-item'><a href='https://www.bok.or.kr' class='source-link' target='_blank'>한국은행, 금융감독원</a></li>
                     <li class='source-item'>한국은행, IMF, 금융통화위원회</li>
+                    <li class='source-item'><a href='https://www.bok.or.kr' class='source-link' target='_blank'>한국은행, 금융감독원</a></li>
+                    <li class='source-item'>한국은행, 금융감독원</li>
+                    <li class='source-item'><a href='https://www.bok.or.kr' class='source-link' target='_blank'>한국은행, IMF, 금융통화위원회</a></li>
                 </ul>
             </div>
         </section>
@@ -742,12 +755,12 @@
             <div class="source-section">
                 <div class="source-title">📌 출처 및 링크</div>
                 <ul class="source-list">
-                    <li class='source-item'><a href='https://www.semiconductors.org' class='source-link' target='_blank'>SIA, SEMI, McKinsey</a></li>
                     <li class='source-item'><a href='https://www.phrma.org' class='source-link' target='_blank'>PhRMA, EvaluatePharma, Accenture</a></li>
-                    <li class='source-item'><a href='https://www.iea.org' class='source-link' target='_blank'>IEA, BloombergNEF, BCG</a></li>
-                    <li class='source-item'>SIA, SEMI, McKinsey</li>
-                    <li class='source-item'>IEA, BloombergNEF, BCG</li>
                     <li class='source-item'>PhRMA, EvaluatePharma, Accenture</li>
+                    <li class='source-item'>SIA, SEMI, McKinsey</li>
+                    <li class='source-item'><a href='https://www.semiconductors.org' class='source-link' target='_blank'>SIA, SEMI, McKinsey</a></li>
+                    <li class='source-item'>IEA, BloombergNEF, BCG</li>
+                    <li class='source-item'><a href='https://www.iea.org' class='source-link' target='_blank'>IEA, BloombergNEF, BCG</a></li>
                 </ul>
             </div>
         </section>
@@ -850,12 +863,12 @@
             <div class="source-section">
                 <div class="source-title">📌 출처 및 링크</div>
                 <ul class="source-list">
-                    <li class='source-item'><a href='https://www.accenture.com' class='source-link' target='_blank'>Accenture, BCG, 한국소비자원</a></li>
                     <li class='source-item'>eMarketer, Nielsen, Statista</li>
-                    <li class='source-item'>Accenture, BCG, 한국소비자원</li>
                     <li class='source-item'><a href='https://www2.deloitte.com' class='source-link' target='_blank'>Deloitte, McKinsey, 한국전자상거래협회</a></li>
                     <li class='source-item'><a href='https://www.emarketer.com' class='source-link' target='_blank'>eMarketer, Nielsen, Statista</a></li>
                     <li class='source-item'>Deloitte, McKinsey, 한국전자상거래협회</li>
+                    <li class='source-item'><a href='https://www.accenture.com' class='source-link' target='_blank'>Accenture, BCG, 한국소비자원</a></li>
+                    <li class='source-item'>Accenture, BCG, 한국소비자원</li>
                 </ul>
             </div>
         </section>
@@ -959,11 +972,11 @@
                 <div class="source-title">📌 출처 및 링크</div>
                 <ul class="source-list">
                     <li class='source-item'><a href='https://www.hannovermesse.de' class='source-link' target='_blank'>Hannover Messe, Deutsche Messe</a></li>
-                    <li class='source-item'>Hannover Messe, Deutsche Messe</li>
-                    <li class='source-item'>CES, Consumer Technology Association</li>
-                    <li class='source-item'>MWC, GSMA</li>
-                    <li class='source-item'><a href='https://www.mwcbarcelona.com' class='source-link' target='_blank'>MWC, GSMA</a></li>
                     <li class='source-item'><a href='https://www.ces.tech' class='source-link' target='_blank'>CES, Consumer Technology Association</a></li>
+                    <li class='source-item'>MWC, GSMA</li>
+                    <li class='source-item'>Hannover Messe, Deutsche Messe</li>
+                    <li class='source-item'><a href='https://www.mwcbarcelona.com' class='source-link' target='_blank'>MWC, GSMA</a></li>
+                    <li class='source-item'>CES, Consumer Technology Association</li>
                 </ul>
             </div>
         </section>
