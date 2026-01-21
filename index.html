@@ -223,71 +223,72 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 <h2>시장동향</h2>
 <div class="summary-box">
 <h3>📋 세부 핵심 요약정보</h3>
-<!-- 원형 다이어그램 -->
-<div style="display: flex; justify-content: center; align-items: center; min-height: 600px; position: relative; margin: 40px 0;">
-<!-- 중앙 원형 다이어그램 -->
-<svg width="400" height="400" viewBox="0 0 400 400" style="position: absolute; z-index: 1;">
-<!-- 외부 원 (배경) -->
-<circle cx="200" cy="200" r="180" fill="none" stroke="#e0e0e0" stroke-width="80" opacity="0.3"/>
-<!-- 파란색 섹션 (상단) -->
-<circle cx="200" cy="200" r="180" fill="none" stroke="#0099CC" stroke-width="80" stroke-dasharray="282.7 1130.9" stroke-dashoffset="0"/>
-<!-- 청록색 섹션 -->
-<circle cx="200" cy="200" r="180" fill="none" stroke="#00A8A8" stroke-width="80" stroke-dasharray="282.7 1130.9" stroke-dashoffset="-282.7"/>
-<!-- 보라색 섹션 -->
-<circle cx="200" cy="200" r="180" fill="none" stroke="#A855F7" stroke-width="80" stroke-dasharray="282.7 1130.9" stroke-dashoffset="-565.4"/>
-<!-- 녹색 섹션 -->
-<circle cx="200" cy="200" r="180" fill="none" stroke="#7AC943" stroke-width="80" stroke-dasharray="282.7 1130.9" stroke-dashoffset="-848.1"/>
-<!-- 중앙 흰색 원 -->
-<circle cx="200" cy="200" r="100" fill="white" stroke="#f0f0f0" stroke-width="2"/>
-<!-- 중앙 텍스트 -->
-<text x="200" y="195" text-anchor="middle" font-size="24" font-weight="700" fill="#1e40af">시장동향</text>
-<text x="200" y="220" text-anchor="middle" font-size="14" fill="#666">2026년 주요 시장</text>
-</svg>
-
-<!-- 주변 항목들 -->
-<div style="position: absolute; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-<!-- 상단 우측 -->
-<div style="position: absolute; top: 0; right: 40px; text-align: center; width: 150px;">
-<div style="width: 50px; height: 50px; background: #0099CC; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">📊</div>
-<h4 style="font-size: 16px; font-weight: 700; color: #0099CC; margin-bottom: 8px;">반도체</h4>
-<p style="font-size: 13px; color: #555; line-height: 1.5;">AI 칩 수요 급증으로 시장 성장</p>
+<!-- 시장동향 테이블 -->
+<div style="overflow-x: auto; margin: 30px 0;">
+<table style="width: 100%; border-collapse: collapse; background: white;">
+<thead>
+<tr style="background: linear-gradient(135deg, #0099CC 0%, #00A8A8 100%); color: white;">
+<th style="padding: 20px; text-align: left; font-size: 16px; font-weight: 700; border: 1px solid #e0e0e0;">시장</th>
+<th style="padding: 20px; text-align: center; font-size: 16px; font-weight: 700; border: 1px solid #e0e0e0;">2025년 성장률</th>
+<th style="padding: 20px; text-align: center; font-size: 16px; font-weight: 700; border: 1px solid #e0e0e0;">시장 규모</th>
+<th style="padding: 20px; text-align: left; font-size: 16px; font-weight: 700; border: 1px solid #e0e0e0;">주요 동인</th>
+<th style="padding: 20px; text-align: center; font-size: 16px; font-weight: 700; border: 1px solid #e0e0e0;">2026년 전망</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom: 2px solid #f0f0f0;">
+<td style="padding: 20px; font-size: 15px; font-weight: 600; color: #0099CC; border: 1px solid #e0e0e0;">🔵 반도체</td>
+<td style="padding: 20px; text-align: center; font-size: 16px; font-weight: 700; color: #0099CC; border: 1px solid #e0e0e0;">+42%</td>
+<td style="padding: 20px; text-align: center; font-size: 15px; color: #333; border: 1px solid #e0e0e0;">$580B</td>
+<td style="padding: 20px; font-size: 14px; color: #555; border: 1px solid #e0e0e0;">AI 칩 수요 급증, 고성능 프로세서 확대</td>
+<td style="padding: 20px; text-align: center; font-size: 15px; font-weight: 600; color: #0099CC; border: 1px solid #e0e0e0;">↑ 강세</td>
+</tr>
+<tr style="border-bottom: 2px solid #f0f0f0;">
+<td style="padding: 20px; font-size: 15px; font-weight: 600; color: #00A8A8; border: 1px solid #e0e0e0;">🟦 배터리</td>
+<td style="padding: 20px; text-align: center; font-size: 16px; font-weight: 700; color: #00A8A8; border: 1px solid #e0e0e0;">+38%</td>
+<td style="padding: 20px; text-align: center; font-size: 15px; color: #333; border: 1px solid #e0e0e0;">$280B</td>
+<td style="padding: 20px; font-size: 14px; color: #555; border: 1px solid #e0e0e0;">전기차 시장 확대, 에너지 저장 수요 증가</td>
+<td style="padding: 20px; text-align: center; font-size: 15px; font-weight: 600; color: #00A8A8; border: 1px solid #e0e0e0;">↑ 강세</td>
+</tr>
+<tr style="border-bottom: 2px solid #f0f0f0;">
+<td style="padding: 20px; font-size: 15px; font-weight: 600; color: #A855F7; border: 1px solid #e0e0e0;">🟣 의약품</td>
+<td style="padding: 20px; text-align: center; font-size: 16px; font-weight: 700; color: #A855F7; border: 1px solid #e0e0e0;">+31%</td>
+<td style="padding: 20px; text-align: center; font-size: 15px; color: #333; border: 1px solid #e0e0e0;">$450B</td>
+<td style="padding: 20px; font-size: 14px; color: #555; border: 1px solid #e0e0e0;">바이오 기술 발전, 신약 개발 가속화</td>
+<td style="padding: 20px; text-align: center; font-size: 15px; font-weight: 600; color: #A855F7; border: 1px solid #e0e0e0;">↑ 강세</td>
+</tr>
+<tr style="border-bottom: 2px solid #f0f0f0;">
+<td style="padding: 20px; font-size: 15px; font-weight: 600; color: #7AC943; border: 1px solid #e0e0e0;">🟢 화학</td>
+<td style="padding: 20px; text-align: center; font-size: 16px; font-weight: 700; color: #7AC943; border: 1px solid #e0e0e0;">+29%</td>
+<td style="padding: 20px; text-align: center; font-size: 15px; color: #333; border: 1px solid #e0e0e0;">$320B</td>
+<td style="padding: 20px; font-size: 14px; color: #555; border: 1px solid #e0e0e0;">친환경 제품 수요, ESG 규제 강화</td>
+<td style="padding: 20px; text-align: center; font-size: 15px; font-weight: 600; color: #7AC943; border: 1px solid #e0e0e0;">↑ 강세</td>
+</tr>
+<tr style="border-bottom: 2px solid #f0f0f0;">
+<td style="padding: 20px; font-size: 15px; font-weight: 600; color: #1E90FF; border: 1px solid #e0e0e0;">🏭 철강</td>
+<td style="padding: 20px; text-align: center; font-size: 16px; font-weight: 700; color: #1E90FF; border: 1px solid #e0e0e0;">+18%</td>
+<td style="padding: 20px; text-align: center; font-size: 15px; color: #333; border: 1px solid #e0e0e0;">$210B</td>
+<td style="padding: 20px; font-size: 14px; color: #555; border: 1px solid #e0e0e0;">인프라 투자 회복, 건설 수요 증가</td>
+<td style="padding: 20px; text-align: center; font-size: 15px; font-weight: 600; color: #1E90FF; border: 1px solid #e0e0e0;">→ 중립</td>
+</tr>
+<tr>
+<td style="padding: 20px; font-size: 15px; font-weight: 600; color: #FCD34D; border: 1px solid #e0e0e0;">🧬 바이오</td>
+<td style="padding: 20px; text-align: center; font-size: 16px; font-weight: 700; color: #FCD34D; border: 1px solid #e0e0e0;">+35%</td>
+<td style="padding: 20px; text-align: center; font-size: 15px; color: #333; border: 1px solid #e0e0e0;">$380B</td>
+<td style="padding: 20px; font-size: 14px; color: #555; border: 1px solid #e0e0e0;">유전자 치료, 면역 치료 기술 혁신</td>
+<td style="padding: 20px; text-align: center; font-size: 15px; font-weight: 600; color: #FCD34D; border: 1px solid #e0e0e0;">↑ 강세</td>
+</tr>
+</tbody>
+</table>
 </div>
 
-<!-- 우측 -->
-<div style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); text-align: center; width: 150px;">
-<div style="width: 50px; height: 50px; background: #00A8A8; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">🔋</div>
-<h4 style="font-size: 16px; font-weight: 700; color: #00A8A8; margin-bottom: 8px;">배터리</h4>
-<p style="font-size: 13px; color: #555; line-height: 1.5;">전기차 시장 확대로 수요 증가</p>
-</div>
-
-<!-- 하단 우측 -->
-<div style="position: absolute; bottom: 0; right: 40px; text-align: center; width: 150px;">
-<div style="width: 50px; height: 50px; background: #A855F7; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">💊</div>
-<h4 style="font-size: 16px; font-weight: 700; color: #A855F7; margin-bottom: 8px;">의약품</h4>
-<p style="font-size: 13px; color: #555; line-height: 1.5;">바이오 기술 발전으로 성장</p>
-</div>
-
-<!-- 하단 좌측 -->
-<div style="position: absolute; bottom: 0; left: 40px; text-align: center; width: 150px;">
-<div style="width: 50px; height: 50px; background: #7AC943; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">🧪</div>
-<h4 style="font-size: 16px; font-weight: 700; color: #7AC943; margin-bottom: 8px;">화학</h4>
-<p style="font-size: 13px; color: #555; line-height: 1.5;">친환경 화학 제품 수요 증가</p>
-</div>
-
-<!-- 좌측 -->
-<div style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); text-align: center; width: 150px;">
-<div style="width: 50px; height: 50px; background: #0099CC; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">🏭</div>
-<h4 style="font-size: 16px; font-weight: 700; color: #0099CC; margin-bottom: 8px;">철강</h4>
-<p style="font-size: 13px; color: #555; line-height: 1.5;">인프라 투자로 수요 회복</p>
-</div>
-
-<!-- 상단 좌측 -->
-<div style="position: absolute; top: 0; left: 40px; text-align: center; width: 150px;">
-<div style="width: 50px; height: 50px; background: #00A8A8; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">🧬</div>
-<h4 style="font-size: 16px; font-weight: 700; color: #00A8A8; margin-bottom: 8px;">바이오</h4>
-<p style="font-size: 13px; color: #555; line-height: 1.5;">의료 기술 혁신 주도</p>
-</div>
-</div>
+<!-- 핵심 인사이트 -->
+<div style="background: linear-gradient(135deg, #f0f7ff 0%, #f0f9ff 100%); padding: 25px; border-radius: 12px; margin: 30px 0; border-left: 5px solid #0099CC;">
+<h4 style="font-size: 18px; font-weight: 700; color: #0099CC; margin-bottom: 15px;">📊 2026년 시장 전망</h4>
+<p style="font-size: 15px; color: #555; line-height: 1.8; margin-bottom: 12px;">
+<strong>전체 시장 성장률: +32% 예상</strong><br>
+AI 기술 발전과 친환경 규제 강화가 주요 성장 동인입니다. 특히 반도체, 배터리, 바이오 시장이 3대 성장 시장으로 부상하고 있으며, 한국 기업들의 기술 경쟁력이 글로벌 시장에서 결정적 역할을 할 것으로 예상됩니다.
+</p>
 </div>
 </div>
 <div class="insights">
