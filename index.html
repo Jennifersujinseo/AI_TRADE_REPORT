@@ -993,7 +993,7 @@ AI 기술 발전과 친환경 규제 강화가 주요 성장 동인입니다. �
 </div>
 </div>
 <script>
-function showSection(id, e) { document.querySelectorAll(".section").forEach(s => s.classList.remove("active")); document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active")); document.getElementById(id).classList.add("active"); e.target.classList.add("active"); window.scrollTo(0, 0); createChart(id); }
+function showSection(id, e) { document.querySelectorAll(".section").forEach(s => s.classList.remove("active")); document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active")); document.getElementById(id).classList.add("active"); if (e && e.target) { e.target.classList.add("active"); } window.scrollTo(0, 0); createChart(id); }
 function createChart(id) {
     const chartConfigs = {
         industry_trends: { type: "bar", labels: ["반도체", "자동차", "석유화학", "철강", "섬유"], data: [15.2, 7.8, 5.4, 3.2, 2.1], colors: ["#0099CC", "#00A8A8", "#A855F7", "#1E90FF", "#FCD34D"] },
