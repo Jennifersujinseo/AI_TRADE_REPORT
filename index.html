@@ -797,12 +797,12 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 function showSection(id, e) { document.querySelectorAll(".section").forEach(s => s.classList.remove("active")); document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active")); document.getElementById(id).classList.add("active"); e.target.classList.add("active"); window.scrollTo(0, 0); createChart(id); }
 function createChart(id) {
     const chartConfigs = {
-        industry_trends: { type: "bar", labels: ["반도체", "자동차", "석유화학", "철강", "섬유"], data: [15.2, 7.8, 5.4, 3.2, 2.1], colors: ["#0099CC", "#00A8A8", "#A855F7", "#003DA5", "#1E90FF"] },
+        industry_trends: { type: "bar", labels: ["반도체", "자동차", "석유화학", "철강", "섬유"], data: [15.2, 7.8, 5.4, 3.2, 2.1], colors: ["#0099CC", "#00A8A8", "#A855F7", "#1E90FF", "#FCD34D"] },
         raw_material_trends: { type: "line", labels: ["1월", "2월", "3월", "4월", "5월", "6월"], data: [85, 88, 92, 95, 98, 102], color: "#0099CC" },
         exchange_rate_trends: { type: "line", labels: ["1주", "2주", "3주", "4주"], data: [1470, 1475, 1478.5, 1480], color: "#00A8A8" },
-        market_trends: { type: "pie", labels: ["반도체", "배터리", "의약품", "화학", "기타"], data: [42, 38, 31, 25, 15], colors: ["#0099CC", "#00A8A8", "#A855F7", "#003DA5", "#1E90FF"] },
-        consumer_trends: { type: "bar", labels: ["모바일", "소셜", "라이브", "전통", "기타"], data: [28, 35, 42, 15, 10], colors: ["#0099CC", "#00A8A8", "#A855F7", "#003DA5", "#1E90FF"] },
-        cbam_trends: { type: "bar", labels: ["시멘트", "철강", "알루미늄", "비료", "전기"], data: [15, 18, 12, 8, 10], colors: ["#0099CC", "#00A8A8", "#A855F7", "#003DA5", "#1E90FF"] }
+        market_trends: { type: "pie", labels: ["반도체", "배터리", "의약품", "화학", "기타"], data: [42, 38, 31, 25, 15], colors: ["#0099CC", "#00A8A8", "#A855F7", "#1E90FF", "#FCD34D"] },
+        consumer_trends: { type: "bar", labels: ["모바일", "소셜", "라이브", "전통", "기타"], data: [28, 35, 42, 15, 10], colors: ["#0099CC", "#00A8A8", "#A855F7", "#1E90FF", "#FCD34D"] },
+        cbam_trends: { type: "bar", labels: ["시멘트", "철강", "알루미늄", "비료", "전기"], data: [15, 18, 12, 8, 10], colors: ["#0099CC", "#00A8A8", "#A855F7", "#1E90FF", "#FCD34D"] }
     };
     
     const config = chartConfigs[id];
