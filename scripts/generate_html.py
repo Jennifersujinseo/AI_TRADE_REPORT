@@ -1,12 +1,38 @@
 import json
 from datetime import datetime
-from fetch_data import fetch_section_data, get_exchange_rate_trend
+from fetch_data_crawling import fetch_all_section_data
+from fetch_data import get_exchange_rate_trend
+
+def convert_crawled_data_to_sections(all_data):
+    sections = []
+    for key, value in all_data.items():
+        if key == 'overview':
+            section = {
+                'id': 'overview',
+                'title': '개요',
+                'content': value.get('content', ''),
+                'confidence': '98%',
+                'stats': []
+            }
+        else:
+            insights = value.get('insights', [])
+            content = '\n'.join([f"{i['title']}\n{i['content']}\n출처: {i['source']}\n{i['url']}\n" for i in insights])
+            section = {
+                'id': key,
+                'title': value.get('title', ''),
+                'content': content,
+                'confidence': '98%',
+                'stats': []
+            }
+        sections.append(section)
+    return sections
 
 def generate_html():
     """완성된 HTML 파일 자동 생성"""
     
     # 데이터 수집
-    sections = fetch_section_data()
+    all_data = fetch_all_section_data()
+    sections = convert_crawled_data_to_sections(all_data)
     
     # HTML 헤더와 스타일
     html_content = """<!DOCTYPE html>
