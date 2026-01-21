@@ -21,11 +21,11 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 .section { background: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; display: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
 .section.active { display: block; animation: fadeIn 0.3s ease-in; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-.section h2 { color: #2563eb; margin-bottom: 20px; font-size: 2em; }
+.section h2 { color: #2563eb; margin-bottom: 20px; font-size: 28px; font-weight: 700; }
 .summary-box { background: linear-gradient(135deg, #f0f4f8 0%, #e0e7ff 100%); padding: 25px; border-radius: 8px; margin-bottom: 30px; border-left: 4px solid #0284c7; }
-.summary-box h3 { color: #0c4a6e; margin-bottom: 20px; font-size: 1.1em; }
+.summary-box h3 { color: #0c4a6e; margin-bottom: 20px; font-size: 16px; font-weight: 700; }
 .summary-content { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; }
-.summary-text { color: #0c4a6e; line-height: 1.8; text-align: justify; font-size: 0.95em; }
+.summary-text { color: #0c4a6e; line-height: 1.8; text-align: justify; font-size: 14px; }
 .summary-visual { background: white; padding: 20px; border-radius: 8px; display: flex; align-items: center; justify-content: center; min-height: 280px; }
 .summary-visual canvas { max-width: 100%; max-height: 280px; }
 .summary-visual table { width: 100%; border-collapse: collapse; font-size: 0.9em; }
@@ -43,12 +43,12 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 @media (max-width: 768px) { .summary-content { grid-template-columns: 1fr; } .header h1 { font-size: 1.8em; } }
 .insights { margin-top: 30px; }
 .insight { margin-bottom: 30px; padding: 25px; background: #f8fafc; border-radius: 8px; border-left: 4px solid #2563eb; }
-.insight h3 { color: #1e40af; margin-bottom: 15px; font-size: 1.1em; }
-.insight-content { color: #475569; line-height: 1.8; margin-bottom: 20px; text-align: justify; }
+.insight h3 { color: #1e40af; margin-bottom: 15px; font-size: 16px; font-weight: 700; }
+.insight-content { color: #475569; line-height: 1.8; margin-bottom: 20px; text-align: justify; font-size: 14px; }
 .insight-source { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0; }
-.source-label { font-weight: 600; color: #666; }
-.source-citation { background: #f0f4f8; color: #1e293b; padding: 12px 14px; border-radius: 6px; font-size: 0.9em; line-height: 1.6; border-left: 3px solid #0284c7; font-style: italic; }
-.source-link { display: inline-block; background: #dbeafe; color: #0284c7; padding: 8px 14px; border-radius: 6px; text-decoration: none; font-size: 0.9em; font-weight: 500; border: 1px solid #0284c7; margin-top: 8px; width: fit-content; }
+.source-label { font-weight: 600; color: #666; font-size: 13px; }
+.source-citation { background: #f0f4f8; color: #1e293b; padding: 12px 14px; border-radius: 6px; font-size: 13px; line-height: 1.6; border-left: 3px solid #0284c7; font-style: italic; }
+.source-link { display: inline-block; background: #dbeafe; color: #0284c7; padding: 8px 14px; border-radius: 6px; text-decoration: none; font-size: 13px; font-weight: 500; border: 1px solid #0284c7; margin-top: 8px; width: fit-content; }
 .source-link:hover { background: #0284c7; color: white; }
 </style>
 </head>
