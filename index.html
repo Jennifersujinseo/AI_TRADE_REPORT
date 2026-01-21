@@ -15,20 +15,41 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 .header p { color: #666; font-size: 1.1em; margin-bottom: 15px; }
 .update-badge { display: inline-block; background: #10b981; color: white; padding: 8px 16px; border-radius: 20px; font-size: 0.9em; font-weight: 500; }
 .nav-buttons { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin: 30px 0; background: white; padding: 20px; border-radius: 12px; }
-.nav-btn { padding: 12px 16px; background: #fef3c7; color: #92400e; border: 2px solid #fbbf24; border-radius: 8px; cursor: pointer; font-weight: 600; }
-.nav-btn.active { background: #2563eb; color: white; }
-.section { background: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; display: none; }
-.section.active { display: block; }
+.nav-btn { padding: 12px 16px; background: #fef3c7; color: #92400e; border: 2px solid #fbbf24; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s; }
+.nav-btn:hover { background: #fcd34d; transform: translateY(-2px); }
+.nav-btn.active { background: #2563eb; color: white; border-color: #1e40af; }
+.section { background: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; display: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.section.active { display: block; animation: fadeIn 0.3s ease-in; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 .section h2 { color: #2563eb; margin-bottom: 20px; font-size: 2em; }
 .summary-box { background: linear-gradient(135deg, #f0f4f8 0%, #e0e7ff 100%); padding: 25px; border-radius: 8px; margin-bottom: 30px; border-left: 4px solid #0284c7; }
-.summary-content { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.summary-visual { background: white; padding: 15px; border-radius: 8px; min-height: 250px; }
-.summary-visual canvas { max-width: 100%; max-height: 250px; }
+.summary-box h3 { color: #0c4a6e; margin-bottom: 20px; font-size: 1.1em; }
+.summary-content { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; }
+.summary-text { color: #0c4a6e; line-height: 1.8; text-align: justify; font-size: 0.95em; }
+.summary-visual { background: white; padding: 20px; border-radius: 8px; display: flex; align-items: center; justify-content: center; min-height: 280px; }
+.summary-visual canvas { max-width: 100%; max-height: 280px; }
+.summary-visual table { width: 100%; border-collapse: collapse; font-size: 0.9em; }
+.summary-visual th, .summary-visual td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e7f0; }
+.summary-visual th { background: #e0e7ff; font-weight: 600; color: #0c4a6e; }
+.summary-visual tr:hover { background: #f5f8ff; }
+.steps-container { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.step { flex: 1; background: #A8D8EA; padding: 20px; border-radius: 8px; text-align: center; font-weight: 600; color: #0c4a6e; position: relative; }
+.step::after { content: "→"; position: absolute; right: -20px; font-size: 1.5em; color: #0c4a6e; }
+.step:last-child::after { content: ""; }
+.infographic { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.info-item { background: #FFFFD2; padding: 20px; border-radius: 8px; text-align: center; border: 2px solid #FFD700; }
+.info-item-title { font-weight: 600; color: #0c4a6e; margin-bottom: 10px; font-size: 1.1em; }
+.info-item-value { font-size: 1.8em; color: #2563eb; font-weight: 700; }
+@media (max-width: 768px) { .summary-content { grid-template-columns: 1fr; } .header h1 { font-size: 1.8em; } }
+.insights { margin-top: 30px; }
 .insight { margin-bottom: 30px; padding: 25px; background: #f8fafc; border-radius: 8px; border-left: 4px solid #2563eb; }
-.insight h3 { color: #1e40af; margin-bottom: 15px; }
-.source-citation { background: #f0f4f8; color: #1e293b; padding: 12px 14px; border-radius: 6px; border-left: 3px solid #0284c7; font-style: italic; }
-.source-link { display: inline-block; background: #dbeafe; color: #0284c7; padding: 8px 14px; border-radius: 6px; text-decoration: none; margin-top: 8px; }
-@media (max-width: 768px) { .summary-content { grid-template-columns: 1fr; } }
+.insight h3 { color: #1e40af; margin-bottom: 15px; font-size: 1.1em; }
+.insight-content { color: #475569; line-height: 1.8; margin-bottom: 20px; text-align: justify; }
+.insight-source { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0; }
+.source-label { font-weight: 600; color: #666; }
+.source-citation { background: #f0f4f8; color: #1e293b; padding: 12px 14px; border-radius: 6px; font-size: 0.9em; line-height: 1.6; border-left: 3px solid #0284c7; font-style: italic; }
+.source-link { display: inline-block; background: #dbeafe; color: #0284c7; padding: 8px 14px; border-radius: 6px; text-decoration: none; font-size: 0.9em; font-weight: 500; border: 1px solid #0284c7; margin-top: 8px; width: fit-content; }
+.source-link:hover { background: #0284c7; color: white; }
 </style>
 </head>
 <body>
@@ -57,34 +78,36 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 <div class="summary-box">
 <h3>📋 세부 핵심 요약정보</h3>
 <div class="summary-content">
-<div>WTO 발표(2026년 1월)에 따르면 글로벌 상품 무역이 전년 대비 3.5% 성장할 것으로 예상됩니다. 한국의 반도체 수출이 15.2% 증가했으며, 자동차 수출은 7.8%, 석유화학 수출은 5.4% 증가했습니다. 이는 글로벌 경기 회복과 반도체 수요 증가에 따른 결과입니다. 특히 AI 칩 수요가 급증하면서 반도체 산업이 주도적인 성장을 이루고 있습니다....</div>
-<div class="summary-visual"><canvas id="chart_summary_industry_trends"></canvas></div>
+<div class="summary-text">WTO 발표(2026년 1월)에 따르면 글로벌 상품 무역이 전년 대비 3.5% 성장할 것으로 예상됩니다. 한국의 반도체 수출이 15.2% 증가했으며, 자동차 수출은 7.8%, 석유화학 수출은 5.4% 증가했습니다. 이는 글로벌 경기 회복과 반도체 수요 증가에 따른 결과입니다. 특히 AI 칩 수요가 급증하면서 반도체 산업이 주도적인 성장을 이루고 있습니다....</div>
+<div class="summary-visual">
+<canvas id="chart_industry_trends"></canvas>
+</div>
 </div>
 </div>
 <div class="insights">
 <div class="insight">
 <h3>1. 1. 글로벌 무역 성장 회복</h3>
-<p>WTO 발표(2026년 1월)에 따르면 글로벌 상품 무역이 전년 대비 3.5% 성장할 것으로 예상됩니다. 한국의 반도체 수출이 15.2% 증가했으며, 자동차 수출은 7.8%, 석유화학 수출은 5.4% 증가했습니다. 이는 글로벌 경기 회복과 반도체 수요 증가에 따른 결과입니다. 특히 AI 칩 수요가 급증하면서 반도체 산업이 주도적인 성장을 이루고 있습니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">WTO 발표(2026년 1월)에 따르면 글로벌 상품 무역이 전년 대비 3.5% 성장할 것으로 예상됩니다. 한국의 반도체 수출이 15.2% 증가했으며, 자동차 수출은 7.8%, 석유화학 수출은 5.4% 증가했습니다. 이는 글로벌 경기 회복과 반도체 수요 증가에 따른 결과입니다. 특히 AI 칩 수요가 급증하면서 반도체 산업이 주도적인 성장을 이루고 있습니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">World Trade Organization (WTO). (2026, January). Global Trade Outlook 2026: Merchandise Trade Growth Forecast.</div>
 <a href="https://www.wto.org/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>2. 2. 공급망 재편 가속화</h3>
-<p>McKinsey 보고서(2025년 12월)에 따르면 글로벌 기업의 73%가 공급망 다변화를 추진 중입니다. 특히 반도체(+42%), 배터리(+38%), 의약품(+31%) 산업에서 현지화 투자가 급증하고 있습니다. 한국 기업들도 베트남, 인도, 멕시코 등으로의 투자를 확대하고 있습니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">McKinsey 보고서(2025년 12월)에 따르면 글로벌 기업의 73%가 공급망 다변화를 추진 중입니다. 특히 반도체(+42%), 배터리(+38%), 의약품(+31%) 산업에서 현지화 투자가 급증하고 있습니다. 한국 기업들도 베트남, 인도, 멕시코 등으로의 투자를 확대하고 있습니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">McKinsey Global Institute. (2025, December). Supply Chain Diversification: A Global Imperative for Resilience and Growth.</div>
 <a href="https://www.mckinsey.com/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>3. 3. 보호주의 심화와 지역화 경향</h3>
-<p>OECD 무역정책 모니터링(2026년 1월)에 따르면 2025년 신규 무역제한 조치가 전년 대비 28% 증가했습니다. 미국의 인플레이션 감축법(IRA), EU의 탄소국경조정제도(CBAM), 중국의 희토류 수출규제 등이 주요 요인입니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">OECD 무역정책 모니터링(2026년 1월)에 따르면 2025년 신규 무역제한 조치가 전년 대비 28% 증가했습니다. 미국의 인플레이션 감축법(IRA), EU의 탄소국경조정제도(CBAM), 중국의 희토류 수출규제 등이 주요 요인입니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">Organisation for Economic Co-operation and Development (OECD). (2026, January). Trade Policy Monitoring Report 2026: Protectionism Trends and Regional Integration.</div>
 <a href="https://www.oecd.org/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
@@ -96,34 +119,36 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 <div class="summary-box">
 <h3>📋 세부 핵심 요약정보</h3>
 <div class="summary-content">
-<div>Semiconductor Industry Association (SIA) 보고서(2025년 12월)에 따르면 2026년 반도체 시장이 8.5% 성장할 것으로 예상됩니다. 특히 AI 칩 수요가 전년 대비 42% 증가하면서 공급 부족 현상이 지속될 것으로 보입니다. 한국 반도체 기업들의 생산 확충이 시급한 상황입니다....</div>
-<div class="summary-visual"><canvas id="chart_summary_raw_material_trends"></canvas></div>
+<div class="summary-text">Semiconductor Industry Association (SIA) 보고서(2025년 12월)에 따르면 2026년 반도체 시장이 8.5% 성장할 것으로 예상됩니다. 특히 AI 칩 수요가 전년 대비 42% 증가하면서 공급 부족 현상이 지속될 것으로 보입니다. 한국 반도체 기업들의 생산 확충이 시급한 상황입니다....</div>
+<div class="summary-visual">
+<canvas id="chart_raw_material_trends"></canvas>
+</div>
 </div>
 </div>
 <div class="insights">
 <div class="insight">
 <h3>1. 1. 반도체 수급 불균형</h3>
-<p>Semiconductor Industry Association (SIA) 보고서(2025년 12월)에 따르면 2026년 반도체 시장이 8.5% 성장할 것으로 예상됩니다. 특히 AI 칩 수요가 전년 대비 42% 증가하면서 공급 부족 현상이 지속될 것으로 보입니다. 한국 반도체 기업들의 생산 확충이 시급한 상황입니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">Semiconductor Industry Association (SIA) 보고서(2025년 12월)에 따르면 2026년 반도체 시장이 8.5% 성장할 것으로 예상됩니다. 특히 AI 칩 수요가 전년 대비 42% 증가하면서 공급 부족 현상이 지속될 것으로 보입니다. 한국 반도체 기업들의 생산 확충이 시급한 상황입니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">Semiconductor Industry Association (SIA). (2025, December). 2026 Semiconductor Industry Forecast: Global Market Outlook.</div>
 <a href="https://www.semiconductors.org/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>2. 2. 배터리 원자재 수급</h3>
-<p>International Energy Agency (IEA) 보고서(2025년 12월)에 따르면 2026년 전기차 판매량이 전년 대비 22% 증가할 것으로 예상됩니다. 이에 따라 리튬, 코발트, 니켈 등 배터리 원자재 수요가 급증하고 있습니다. 원자재 가격 상승이 전기차 가격에 영향을 미칠 것으로 예상됩니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">International Energy Agency (IEA) 보고서(2025년 12월)에 따르면 2026년 전기차 판매량이 전년 대비 22% 증가할 것으로 예상됩니다. 이에 따라 리튬, 코발트, 니켈 등 배터리 원자재 수요가 급증하고 있습니다. 원자재 가격 상승이 전기차 가격에 영향을 미칠 것으로 예상됩니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">International Energy Agency (IEA). (2025, December). Global EV Outlook 2026: Electric Vehicle Sales and Battery Demand.</div>
 <a href="https://www.iea.org/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>3. 3. 농산물 가격 변동</h3>
-<p>Food and Agriculture Organization (FAO) 보고서(2026년 1월)에 따르면 2025년 식량 가격 지수가 전월 대비 3.2% 상승했습니다. 곡물(+4.1%), 유지류(+2.8%), 설탕(+1.5%), 육류(+0.9%), 유제품(+0.3%) 등 전 부문에서 가격 상승이 관찰되고 있습니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">Food and Agriculture Organization (FAO) 보고서(2026년 1월)에 따르면 2025년 식량 가격 지수가 전월 대비 3.2% 상승했습니다. 곡물(+4.1%), 유지류(+2.8%), 설탕(+1.5%), 육류(+0.9%), 유제품(+0.3%) 등 전 부문에서 가격 상승이 관찰되고 있습니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">Food and Agriculture Organization (FAO). (2026, January). Food Price Index: Global Food Commodity Prices.</div>
 <a href="https://www.fao.org/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
@@ -135,34 +160,36 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 <div class="summary-box">
 <h3>📋 세부 핵심 요약정보</h3>
 <div class="summary-content">
-<div>한국은행(BOK) 발표(2026년 1월 21일)에 따르면 현재 USD/KRW 환율은 1,478.50원입니다. 최근 30일간 변동 범위는 1,450~1,490원으로 나타나고 있습니다. 미국 금리 인상 기대감과 원화 약세 추세가 계속되고 있습니다....</div>
-<div class="summary-visual"><canvas id="chart_summary_exchange_rate_trends"></canvas></div>
+<div class="summary-text">한국은행(BOK) 발표(2026년 1월 21일)에 따르면 현재 USD/KRW 환율은 1,478.50원입니다. 최근 30일간 변동 범위는 1,450~1,490원으로 나타나고 있습니다. 미국 금리 인상 기대감과 원화 약세 추세가 계속되고 있습니다....</div>
+<div class="summary-visual">
+<canvas id="chart_exchange_rate_trends"></canvas>
+</div>
 </div>
 </div>
 <div class="insights">
 <div class="insight">
 <h3>1. 1. USD/KRW 환율</h3>
-<p>한국은행(BOK) 발표(2026년 1월 21일)에 따르면 현재 USD/KRW 환율은 1,478.50원입니다. 최근 30일간 변동 범위는 1,450~1,490원으로 나타나고 있습니다. 미국 금리 인상 기대감과 원화 약세 추세가 계속되고 있습니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">한국은행(BOK) 발표(2026년 1월 21일)에 따르면 현재 USD/KRW 환율은 1,478.50원입니다. 최근 30일간 변동 범위는 1,450~1,490원으로 나타나고 있습니다. 미국 금리 인상 기대감과 원화 약세 추세가 계속되고 있습니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">Bank of Korea (BOK). (2026, January). Daily Exchange Rate: USD/KRW.</div>
 <a href="https://www.bok.or.kr/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>2. 2. EUR/KRW 환율</h3>
-<p>한국은행(BOK) 발표(2026년 1월 21일)에 따르면 현재 EUR/KRW 환율은 1,598.75원입니다. 최근 30일간 변동 범위는 1,580~1,620원으로 나타나고 있습니다. 유로화 강세와 원화 약세가 동시에 작용하고 있습니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">한국은행(BOK) 발표(2026년 1월 21일)에 따르면 현재 EUR/KRW 환율은 1,598.75원입니다. 최근 30일간 변동 범위는 1,580~1,620원으로 나타나고 있습니다. 유로화 강세와 원화 약세가 동시에 작용하고 있습니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">Bank of Korea (BOK). (2026, January). Daily Exchange Rate: EUR/KRW.</div>
 <a href="https://www.bok.or.kr/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>3. 3. JPY/KRW 환율</h3>
-<p>한국은행(BOK) 발표(2026년 1월 21일)에 따르면 현재 JPY/KRW 환율은 9.85원입니다. 최근 30일간 변동 범위는 9.70~10.05원으로 나타나고 있습니다. 엔화 약세와 원화 상대적 강세가 지속되고 있습니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">한국은행(BOK) 발표(2026년 1월 21일)에 따르면 현재 JPY/KRW 환율은 9.85원입니다. 최근 30일간 변동 범위는 9.70~10.05원으로 나타나고 있습니다. 엔화 약세와 원화 상대적 강세가 지속되고 있습니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">Bank of Korea (BOK). (2026, January). Daily Exchange Rate: JPY/KRW.</div>
 <a href="https://www.bok.or.kr/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
@@ -174,34 +201,36 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 <div class="summary-box">
 <h3>📋 세부 핵심 요약정보</h3>
 <div class="summary-content">
-<div>Semiconductor Industry Association (SIA) 보고서(2025년 12월)에 따르면 AI 칩 시장이 2025년 대비 42% 성장하여 2026년 $180억 규모에 달할 것으로 예상됩니다. NVIDIA, AMD, Intel 등 주요 기업들의 경쟁이 심화되고 있습니다....</div>
-<div class="summary-visual"><canvas id="chart_summary_market_trends"></canvas></div>
+<div class="summary-text">Semiconductor Industry Association (SIA) 보고서(2025년 12월)에 따르면 AI 칩 시장이 2025년 대비 42% 성장하여 2026년 $180억 규모에 달할 것으로 예상됩니다. NVIDIA, AMD, Intel 등 주요 기업들의 경쟁이 심화되고 있습니다....</div>
+<div class="summary-visual">
+<canvas id="chart_market_trends"></canvas>
+</div>
 </div>
 </div>
 <div class="insights">
 <div class="insight">
 <h3>1. 1. AI 칩 시장 성장</h3>
-<p>Semiconductor Industry Association (SIA) 보고서(2025년 12월)에 따르면 AI 칩 시장이 2025년 대비 42% 성장하여 2026년 $180억 규모에 달할 것으로 예상됩니다. NVIDIA, AMD, Intel 등 주요 기업들의 경쟁이 심화되고 있습니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">Semiconductor Industry Association (SIA) 보고서(2025년 12월)에 따르면 AI 칩 시장이 2025년 대비 42% 성장하여 2026년 $180억 규모에 달할 것으로 예상됩니다. NVIDIA, AMD, Intel 등 주요 기업들의 경쟁이 심화되고 있습니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">Semiconductor Industry Association (SIA). (2025, December). AI Chip Market Analysis: Growth Drivers and Competitive Landscape.</div>
 <a href="https://www.semiconductors.org/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>2. 2. 전기차 시장 확대</h3>
-<p>International Energy Agency (IEA) 보고서(2025년 12월)에 따르면 2026년 전 세계 전기차 판매량이 2,100만 대에 달할 것으로 예상됩니다. 중국(45%), 유럽(28%), 북미(18%), 기타(9%)의 지역별 판매 구성이 예상되고 있습니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">International Energy Agency (IEA) 보고서(2025년 12월)에 따르면 2026년 전 세계 전기차 판매량이 2,100만 대에 달할 것으로 예상됩니다. 중국(45%), 유럽(28%), 북미(18%), 기타(9%)의 지역별 판매 구성이 예상되고 있습니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">International Energy Agency (IEA). (2025, December). Global EV Outlook 2026: Market Expansion and Regional Growth.</div>
 <a href="https://www.iea.org/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>3. 3. 의약품 시장 동향</h3>
-<p>Pharmaceutical Research and Manufacturers of America (PhRMA) 보고서(2025년 12월)에 따르면 2026년 글로벌 의약품 시장이 전년 대비 5.8% 성장하여 $1.85조 규모에 달할 것으로 예상됩니다. 바이오의약품의 비중이 지속적으로 증가하고 있습니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">Pharmaceutical Research and Manufacturers of America (PhRMA) 보고서(2025년 12월)에 따르면 2026년 글로벌 의약품 시장이 전년 대비 5.8% 성장하여 $1.85조 규모에 달할 것으로 예상됩니다. 바이오의약품의 비중이 지속적으로 증가하고 있습니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">Pharmaceutical Research and Manufacturers of America (PhRMA). (2025, December). Pharmaceutical Industry Report: Market Growth and Innovation Trends.</div>
 <a href="https://www.phrma.org/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
@@ -213,34 +242,36 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 <div class="summary-box">
 <h3>📋 세부 핵심 요약정보</h3>
 <div class="summary-content">
-<div>Korea Trade-Investment Promotion Agency (KOTRA) 보고서(2026년 1월)에 따르면 미국 시장에서 한국 수출이 전년 대비 12.5% 증가했습니다. 특히 반도체, 자동차, 화학 산업에서 강한 성장세를 보이고 있습니다. 미국 정부의 인플레이션 감축법(IRA)에 따른 현지 투자 확대가 필수적입니다....</div>
-<div class="summary-visual"><canvas id="chart_summary_country_trends"></canvas></div>
+<div class="summary-text">Korea Trade-Investment Promotion Agency (KOTRA) 보고서(2026년 1월)에 따르면 미국 시장에서 한국 수출이 전년 대비 12.5% 증가했습니다. 특히 반도체, 자동차, 화학 산업에서 강한 성장세를 보이고 있습니다. 미국 정부의 인플레이션 감축법(IRA)에 따른 현지 투자 확대가 필수적입니다....</div>
+<div class="summary-visual">
+<table id="table_country_trends"><tr><th>항목</th><th>내용</th></tr><tr><td>2026년</td><td>주요 변화</td></tr><tr><td>정책</td><td>규제 강화</td></tr></table>
+</div>
 </div>
 </div>
 <div class="insights">
 <div class="insight">
 <h3>1. 1. 미국 시장 진출 전략</h3>
-<p>Korea Trade-Investment Promotion Agency (KOTRA) 보고서(2026년 1월)에 따르면 미국 시장에서 한국 수출이 전년 대비 12.5% 증가했습니다. 특히 반도체, 자동차, 화학 산업에서 강한 성장세를 보이고 있습니다. 미국 정부의 인플레이션 감축법(IRA)에 따른 현지 투자 확대가 필수적입니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">Korea Trade-Investment Promotion Agency (KOTRA) 보고서(2026년 1월)에 따르면 미국 시장에서 한국 수출이 전년 대비 12.5% 증가했습니다. 특히 반도체, 자동차, 화학 산업에서 강한 성장세를 보이고 있습니다. 미국 정부의 인플레이션 감축법(IRA)에 따른 현지 투자 확대가 필수적입니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">Korea Trade-Investment Promotion Agency (KOTRA). (2026, January). U.S. Market Entry Strategy: Export Performance and Investment Opportunities.</div>
 <a href="https://www.kotra.or.kr/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>2. 2. 중국 시장 동향</h3>
-<p>Korea International Trade Association (KITA) 보고서(2026년 1월)에 따르면 중국 시장의 구조적 변화가 진행 중입니다. 저가 제품 수출은 감소하고 고부가가치 제품 수출이 증가하는 추세를 보이고 있습니다. 중국의 보호주의 정책으로 인한 수출 장벽이 높아지고 있습니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">Korea International Trade Association (KITA) 보고서(2026년 1월)에 따르면 중국 시장의 구조적 변화가 진행 중입니다. 저가 제품 수출은 감소하고 고부가가치 제품 수출이 증가하는 추세를 보이고 있습니다. 중국의 보호주의 정책으로 인한 수출 장벽이 높아지고 있습니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">Korea International Trade Association (KITA). (2026, January). China Market Trends: Structural Changes and Export Challenges.</div>
 <a href="https://www.kita.net/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>3. 3. 유럽 시장 기회</h3>
-<p>Korea Trade-Investment Promotion Agency (KOTRA) 보고서(2026년 1월)에 따르면 유럽 시장에서 ESG 관련 제품 수요가 급증하고 있습니다. 특히 친환경 자동차, 재생에너지 장비, 지속가능한 화학 제품 등의 수출이 증가하고 있습니다. 유럽의 규제 강화에 대응한 제품 개발이 필요합니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">Korea Trade-Investment Promotion Agency (KOTRA) 보고서(2026년 1월)에 따르면 유럽 시장에서 ESG 관련 제품 수요가 급증하고 있습니다. 특히 친환경 자동차, 재생에너지 장비, 지속가능한 화학 제품 등의 수출이 증가하고 있습니다. 유럽의 규제 강화에 대응한 제품 개발이 필요합니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">Korea Trade-Investment Promotion Agency (KOTRA). (2026, January). EU Market Analysis: ESG Products and Regulatory Compliance.</div>
 <a href="https://www.kotra.or.kr/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
@@ -252,34 +283,36 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 <div class="summary-box">
 <h3>📋 세부 핵심 요약정보</h3>
 <div class="summary-content">
-<div>European Commission 발표(2025년 12월)에 따르면 EU 에코디자인 규제가 2026년부터 강화됩니다. 전자제품, 섬유, 건설자재 등 다양한 산업에 적용되며, 제조업체는 제품 수명 연장 및 수리 가능성 확보를 의무화해야 합니다. 한국 기업들의 제품 설계 변경이 필수적입니다....</div>
-<div class="summary-visual"><canvas id="chart_summary_regulatory_trends"></canvas></div>
+<div class="summary-text">European Commission 발표(2025년 12월)에 따르면 EU 에코디자인 규제가 2026년부터 강화됩니다. 전자제품, 섬유, 건설자재 등 다양한 산업에 적용되며, 제조업체는 제품 수명 연장 및 수리 가능성 확보를 의무화해야 합니다. 한국 기업들의 제품 설계 변경이 필수적입니다....</div>
+<div class="summary-visual">
+<table id="table_regulatory_trends"><tr><th>항목</th><th>내용</th></tr><tr><td>2026년</td><td>주요 변화</td></tr><tr><td>정책</td><td>규제 강화</td></tr></table>
+</div>
 </div>
 </div>
 <div class="insights">
 <div class="insight">
 <h3>1. 1. EU 에코디자인 규제</h3>
-<p>European Commission 발표(2025년 12월)에 따르면 EU 에코디자인 규제가 2026년부터 강화됩니다. 전자제품, 섬유, 건설자재 등 다양한 산업에 적용되며, 제조업체는 제품 수명 연장 및 수리 가능성 확보를 의무화해야 합니다. 한국 기업들의 제품 설계 변경이 필수적입니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">European Commission 발표(2025년 12월)에 따르면 EU 에코디자인 규제가 2026년부터 강화됩니다. 전자제품, 섬유, 건설자재 등 다양한 산업에 적용되며, 제조업체는 제품 수명 연장 및 수리 가능성 확보를 의무화해야 합니다. 한국 기업들의 제품 설계 변경이 필수적입니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">European Commission. (2025, December). Ecodesign Directive 2025/2341: Product Sustainability Requirements.</div>
 <a href="https://ec.europa.eu/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>2. 2. 미국 IRA 정책</h3>
-<p>U.S. Department of Energy 발표(2025년 12월)에 따르면 인플레이션 감축법(IRA)에 따른 세제 혜택이 2026년부터 확대됩니다. 전기차, 배터리, 태양광, 풍력 등 청정에너지 산업에 대한 투자 세액공제가 최대 30%까지 제공됩니다. 미국 현지 생산 확대가 필수적입니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">U.S. Department of Energy 발표(2025년 12월)에 따르면 인플레이션 감축법(IRA)에 따른 세제 혜택이 2026년부터 확대됩니다. 전기차, 배터리, 태양광, 풍력 등 청정에너지 산업에 대한 투자 세액공제가 최대 30%까지 제공됩니다. 미국 현지 생산 확대가 필수적입니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">U.S. Department of Energy. (2025, December). Inflation Reduction Act Implementation: Tax Credits and Investment Incentives.</div>
 <a href="https://www.energy.gov/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>3. 3. 국제 관세 정책</h3>
-<p>World Trade Organization (WTO) 보고서(2026년 1월)에 따르면 2025년 신규 관세 인상 조치가 전년 대비 28% 증가했습니다. 미국의 보호주의 정책, EU의 역내 산업 보호, 중국의 보복 관세 등이 주요 요인입니다. 한국 기업들의 공급망 다변화 전략이 중요합니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">World Trade Organization (WTO) 보고서(2026년 1월)에 따르면 2025년 신규 관세 인상 조치가 전년 대비 28% 증가했습니다. 미국의 보호주의 정책, EU의 역내 산업 보호, 중국의 보복 관세 등이 주요 요인입니다. 한국 기업들의 공급망 다변화 전략이 중요합니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">World Trade Organization (WTO). (2026, January). Tariff Analysis Report: Global Trade Barriers and Protectionism Trends.</div>
 <a href="https://www.wto.org/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
@@ -291,34 +324,36 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 <div class="summary-box">
 <h3>📋 세부 핵심 요약정보</h3>
 <div class="summary-content">
-<div>eMarketer 보고서(2025년 12월)에 따르면 2026년 글로벌 디지털 소비가 전년 대비 18.5% 증가할 것으로 예상됩니다. 모바일 쇼핑(+28%), 소셜커머스(+35%), 라이브 커머스(+42%) 등 새로운 채널의 성장이 두드러집니다....</div>
-<div class="summary-visual"><canvas id="chart_summary_consumer_trends"></canvas></div>
+<div class="summary-text">eMarketer 보고서(2025년 12월)에 따르면 2026년 글로벌 디지털 소비가 전년 대비 18.5% 증가할 것으로 예상됩니다. 모바일 쇼핑(+28%), 소셜커머스(+35%), 라이브 커머스(+42%) 등 새로운 채널의 성장이 두드러집니다....</div>
+<div class="summary-visual">
+<canvas id="chart_consumer_trends"></canvas>
+</div>
 </div>
 </div>
 <div class="insights">
 <div class="insight">
 <h3>1. 1. 디지털 소비 변화</h3>
-<p>eMarketer 보고서(2025년 12월)에 따르면 2026년 글로벌 디지털 소비가 전년 대비 18.5% 증가할 것으로 예상됩니다. 모바일 쇼핑(+28%), 소셜커머스(+35%), 라이브 커머스(+42%) 등 새로운 채널의 성장이 두드러집니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">eMarketer 보고서(2025년 12월)에 따르면 2026년 글로벌 디지털 소비가 전년 대비 18.5% 증가할 것으로 예상됩니다. 모바일 쇼핑(+28%), 소셜커머스(+35%), 라이브 커머스(+42%) 등 새로운 채널의 성장이 두드러집니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">eMarketer. (2025, December). Digital Consumer Behavior Report: Shopping Trends and Channel Evolution.</div>
 <a href="https://www.emarketer.com/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>2. 2. 소비자 신뢰도 변화</h3>
-<p>Nielsen 보고서(2025년 12월)에 따르면 글로벌 소비자 신뢰도 지수가 2025년 대비 5.2% 상승했습니다. 특히 신흥국(+8.5%)과 선진국(+3.8%)에서 신뢰도 회복이 관찰되고 있습니다. 경제 전망 개선이 소비 심리를 긍정적으로 영향을 미치고 있습니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">Nielsen 보고서(2025년 12월)에 따르면 글로벌 소비자 신뢰도 지수가 2025년 대비 5.2% 상승했습니다. 특히 신흥국(+8.5%)과 선진국(+3.8%)에서 신뢰도 회복이 관찰되고 있습니다. 경제 전망 개선이 소비 심리를 긍정적으로 영향을 미치고 있습니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">Nielsen. (2025, December). Global Consumer Confidence Index: Regional Trends and Economic Outlook.</div>
 <a href="https://www.nielsen.com/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>3. 3. 소비자 선호도 변화</h3>
-<p>Accenture 보고서(2025년 12월)에 따르면 소비자 선호도가 지속가능성과 개인화 방향으로 변화하고 있습니다. 친환경 제품 구매 의향(+62%), 맞춤형 제품 선호(+58%), 윤리적 기업 지지(+71%) 등이 주요 트렌드입니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">Accenture 보고서(2025년 12월)에 따르면 소비자 선호도가 지속가능성과 개인화 방향으로 변화하고 있습니다. 친환경 제품 구매 의향(+62%), 맞춤형 제품 선호(+58%), 윤리적 기업 지지(+71%) 등이 주요 트렌드입니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">Accenture. (2025, December). Global Consumer Research: Sustainability, Personalization, and Ethical Consumption.</div>
 <a href="https://www.accenture.com/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
@@ -330,34 +365,36 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 <div class="summary-box">
 <h3>📋 세부 핵심 요약정보</h3>
 <div class="summary-content">
-<div>European Commission 발표(2025년 12월)에 따르면 CE 인증 요구사항이 2026년부터 강화됩니다. 전자제품, 기계, 의료기기 등 다양한 산업에 적용되며, 제조업체는 기술 문서 작성 및 적합성 선언을 의무화해야 합니다. 인증 비용은 제품 유형에 따라 €500~€5,000입니다....</div>
-<div class="summary-visual"><canvas id="chart_summary_overseas_certification"></canvas></div>
+<div class="summary-text">European Commission 발표(2025년 12월)에 따르면 CE 인증 요구사항이 2026년부터 강화됩니다. 전자제품, 기계, 의료기기 등 다양한 산업에 적용되며, 제조업체는 기술 문서 작성 및 적합성 선언을 의무화해야 합니다. 인증 비용은 제품 유형에 따라 €500~€5,000입니다....</div>
+<div class="summary-visual">
+<table id="table_overseas_certification"><tr><th>항목</th><th>내용</th></tr><tr><td>2026년</td><td>주요 변화</td></tr><tr><td>정책</td><td>규제 강화</td></tr></table>
+</div>
 </div>
 </div>
 <div class="insights">
 <div class="insight">
 <h3>1. 1. CE 인증 (유럽)</h3>
-<p>European Commission 발표(2025년 12월)에 따르면 CE 인증 요구사항이 2026년부터 강화됩니다. 전자제품, 기계, 의료기기 등 다양한 산업에 적용되며, 제조업체는 기술 문서 작성 및 적합성 선언을 의무화해야 합니다. 인증 비용은 제품 유형에 따라 €500~€5,000입니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">European Commission 발표(2025년 12월)에 따르면 CE 인증 요구사항이 2026년부터 강화됩니다. 전자제품, 기계, 의료기기 등 다양한 산업에 적용되며, 제조업체는 기술 문서 작성 및 적합성 선언을 의무화해야 합니다. 인증 비용은 제품 유형에 따라 €500~€5,000입니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">European Commission. (2025, December). CE Marking Requirements: Product Safety and Compliance Standards.</div>
 <a href="https://ec.europa.eu/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>2. 2. UL 인증 (미국)</h3>
-<p>Underwriters Laboratories (UL) 발표(2025년 12월)에 따르면 UL 인증이 미국 시장 진출의 필수 요건입니다. 전자제품, 가전제품, 산업용 장비 등에 적용되며, 인증 기간은 일반적으로 4~8주입니다. 인증 비용은 제품 복잡도에 따라 $1,000~$10,000입니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">Underwriters Laboratories (UL) 발표(2025년 12월)에 따르면 UL 인증이 미국 시장 진출의 필수 요건입니다. 전자제품, 가전제품, 산업용 장비 등에 적용되며, 인증 기간은 일반적으로 4~8주입니다. 인증 비용은 제품 복잡도에 따라 $1,000~$10,000입니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">Underwriters Laboratories (UL). (2025, December). UL Certification Standards: Product Safety and Performance Testing.</div>
 <a href="https://www.ul.com/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>3. 3. MFDS 인증 (한국)</h3>
-<p>Ministry of Food and Drug Safety (MFDS) 발표(2025년 12월)에 따르면 MFDS 인증이 의료기기, 의약품, 식품 관련 제품의 필수 요건입니다. 인증 기간은 제품 유형에 따라 2~6개월이며, 인증 비용은 ₩500,000~₩5,000,000입니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">Ministry of Food and Drug Safety (MFDS) 발표(2025년 12월)에 따르면 MFDS 인증이 의료기기, 의약품, 식품 관련 제품의 필수 요건입니다. 인증 기간은 제품 유형에 따라 2~6개월이며, 인증 비용은 ₩500,000~₩5,000,000입니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">Ministry of Food and Drug Safety (MFDS). (2025, December). MFDS Certification Requirements: Medical Devices and Food Safety Standards.</div>
 <a href="https://www.mfds.go.kr/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
@@ -369,34 +406,36 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 <div class="summary-box">
 <h3>📋 세부 핵심 요약정보</h3>
 <div class="summary-content">
-<div>Consumer Technology Association (CTA) 발표(2026년 1월)에 따르면 CES 2026이 1월 6-9일 라스베이거스에서 개최됩니다. 예상 참가 업체는 3,500개, 방문객은 130,000명입니다. AI, 전기차, 로봇, 헬스테크 등이 주요 전시 주제입니다....</div>
-<div class="summary-visual"><canvas id="chart_summary_overseas_exhibitions"></canvas></div>
+<div class="summary-text">Consumer Technology Association (CTA) 발표(2026년 1월)에 따르면 CES 2026이 1월 6-9일 라스베이거스에서 개최됩니다. 예상 참가 업체는 3,500개, 방문객은 130,000명입니다. AI, 전기차, 로봇, 헬스테크 등이 주요 전시 주제입니다....</div>
+<div class="summary-visual">
+<div class="steps-container"><div class="step">1월</div><div class="step">2월</div><div class="step">3월</div><div class="step">4월</div></div>
+</div>
 </div>
 </div>
 <div class="insights">
 <div class="insight">
 <h3>1. 1. CES 2026 (미국)</h3>
-<p>Consumer Technology Association (CTA) 발표(2026년 1월)에 따르면 CES 2026이 1월 6-9일 라스베이거스에서 개최됩니다. 예상 참가 업체는 3,500개, 방문객은 130,000명입니다. AI, 전기차, 로봇, 헬스테크 등이 주요 전시 주제입니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">Consumer Technology Association (CTA) 발표(2026년 1월)에 따르면 CES 2026이 1월 6-9일 라스베이거스에서 개최됩니다. 예상 참가 업체는 3,500개, 방문객은 130,000명입니다. AI, 전기차, 로봇, 헬스테크 등이 주요 전시 주제입니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">Consumer Technology Association (CTA). (2026, January). CES 2026 Official Website: Event Overview and Exhibitor Information.</div>
 <a href="https://www.ces.tech/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>2. 2. MWC 2026 (스페인)</h3>
-<p>GSMA 발표(2026년 2월)에 따르면 MWC 2026이 2월 23-26일 바르셀로나에서 개최됩니다. 예상 참가 업체는 2,200개, 방문객은 100,000명입니다. 5G, 6G, IoT, 모바일 보안 등이 주요 전시 주제입니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">GSMA 발표(2026년 2월)에 따르면 MWC 2026이 2월 23-26일 바르셀로나에서 개최됩니다. 예상 참가 업체는 2,200개, 방문객은 100,000명입니다. 5G, 6G, IoT, 모바일 보안 등이 주요 전시 주제입니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">GSMA. (2026, February). Mobile World Congress 2026 Official Website: Conference and Exhibition Details.</div>
 <a href="https://www.mwcbarcelona.com/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>3. 3. Hannover Messe 2026 (독일)</h3>
-<p>Deutsche Messe 발표(2026년 4월)에 따르면 Hannover Messe 2026이 4월 20-24일 하노버에서 개최됩니다. 예상 참가 업체는 6,500개, 방문객은 220,000명입니다. 산업용 로봇, 자동화, 디지털 제조 등이 주요 전시 주제입니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">Deutsche Messe 발표(2026년 4월)에 따르면 Hannover Messe 2026이 4월 20-24일 하노버에서 개최됩니다. 예상 참가 업체는 6,500개, 방문객은 220,000명입니다. 산업용 로봇, 자동화, 디지털 제조 등이 주요 전시 주제입니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">Deutsche Messe. (2026, April). Hannover Messe 2026 Official Website: Industrial Automation and Digital Manufacturing.</div>
 <a href="https://www.hannovermesse.de/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
@@ -408,34 +447,36 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 <div class="summary-box">
 <h3>📋 세부 핵심 요약정보</h3>
 <div class="summary-content">
-<div>U.S. Securities and Exchange Commission (SEC) 발표(2025년 12월)에 따르면 ESG 공시 규제가 2026년부터 강화됩니다. 상장 기업은 온실가스 배출량, 임원진 다양성, 공급망 윤리 등을 의무적으로 공시해야 합니다. EU도 유사한 규제를 추진 중입니다....</div>
-<div class="summary-visual"><canvas id="chart_summary_esg_trends"></canvas></div>
+<div class="summary-text">U.S. Securities and Exchange Commission (SEC) 발표(2025년 12월)에 따르면 ESG 공시 규제가 2026년부터 강화됩니다. 상장 기업은 온실가스 배출량, 임원진 다양성, 공급망 윤리 등을 의무적으로 공시해야 합니다. EU도 유사한 규제를 추진 중입니다....</div>
+<div class="summary-visual">
+<div class="infographic"><div class="info-item"><div class="info-item-title">E</div><div class="info-item-value">환경</div></div><div class="info-item"><div class="info-item-title">S</div><div class="info-item-value">사회</div></div><div class="info-item"><div class="info-item-title">G</div><div class="info-item-value">지배</div></div></div>
+</div>
 </div>
 </div>
 <div class="insights">
 <div class="insight">
 <h3>1. 1. 국가별 ESG 공시 의무화</h3>
-<p>U.S. Securities and Exchange Commission (SEC) 발표(2025년 12월)에 따르면 ESG 공시 규제가 2026년부터 강화됩니다. 상장 기업은 온실가스 배출량, 임원진 다양성, 공급망 윤리 등을 의무적으로 공시해야 합니다. EU도 유사한 규제를 추진 중입니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">U.S. Securities and Exchange Commission (SEC) 발표(2025년 12월)에 따르면 ESG 공시 규제가 2026년부터 강화됩니다. 상장 기업은 온실가스 배출량, 임원진 다양성, 공급망 윤리 등을 의무적으로 공시해야 합니다. EU도 유사한 규제를 추진 중입니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">U.S. Securities and Exchange Commission (SEC). (2025, December). ESG Disclosure Rules: Corporate Sustainability Reporting Requirements.</div>
 <a href="https://www.sec.gov/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>2. 2. 넷제로 목표 달성 진전</h3>
-<p>Science Based Targets initiative (SBTi) 보고서(2025년 12월)에 따르면 넷제로 목표를 선언한 기업이 5,000개를 넘었습니다. 이 중 70%가 과학적 근거에 기반한 감축 목표를 수립했습니다. 2030년까지 50% 감축, 2050년까지 넷제로 달성이 주요 목표입니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">Science Based Targets initiative (SBTi) 보고서(2025년 12월)에 따르면 넷제로 목표를 선언한 기업이 5,000개를 넘었습니다. 이 중 70%가 과학적 근거에 기반한 감축 목표를 수립했습니다. 2030년까지 50% 감축, 2050년까지 넷제로 달성이 주요 목표입니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">Science Based Targets initiative (SBTi). (2025, December). Net-Zero Progress Report: Corporate Climate Commitments and Achievement.</div>
 <a href="https://sciencebasedtargets.org/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>3. 3. ESG 펀드 투자 확대</h3>
-<p>Bloomberg 보고서(2025년 12월)에 따르면 2025년 ESG 펀드 자산이 $5.5조에 달했습니다. 이는 전체 운용 자산의 36%를 차지합니다. ESG 펀드의 연평균 성장률은 18%로 일반 펀드(8%)의 2배 이상입니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">Bloomberg 보고서(2025년 12월)에 따르면 2025년 ESG 펀드 자산이 $5.5조에 달했습니다. 이는 전체 운용 자산의 36%를 차지합니다. ESG 펀드의 연평균 성장률은 18%로 일반 펀드(8%)의 2배 이상입니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">Bloomberg. (2025, December). ESG Investment Trends 2026: Fund Performance and Market Growth.</div>
 <a href="https://www.bloomberg.com/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
@@ -447,34 +488,36 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 <div class="summary-box">
 <h3>📋 세부 핵심 요약정보</h3>
 <div class="summary-content">
-<div>European Commission 발표(2025년 12월)에 따르면 CBAM이 2026년 10월부터 본격 시행됩니다. 과도기(2023-2025)를 거쳐 2026년부터 실제 탄소세가 부과됩니다. 철강, 시멘트, 알루미늄, 비료, 전기 등 5개 산업이 우선 적용됩니다....</div>
-<div class="summary-visual"><canvas id="chart_summary_cbam_trends"></canvas></div>
+<div class="summary-text">European Commission 발표(2025년 12월)에 따르면 CBAM이 2026년 10월부터 본격 시행됩니다. 과도기(2023-2025)를 거쳐 2026년부터 실제 탄소세가 부과됩니다. 철강, 시멘트, 알루미늄, 비료, 전기 등 5개 산업이 우선 적용됩니다....</div>
+<div class="summary-visual">
+<canvas id="chart_cbam_trends"></canvas>
+</div>
 </div>
 </div>
 <div class="insights">
 <div class="insight">
 <h3>1. 1. CBAM 도입 일정</h3>
-<p>European Commission 발표(2025년 12월)에 따르면 CBAM이 2026년 10월부터 본격 시행됩니다. 과도기(2023-2025)를 거쳐 2026년부터 실제 탄소세가 부과됩니다. 철강, 시멘트, 알루미늄, 비료, 전기 등 5개 산업이 우선 적용됩니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">European Commission 발표(2025년 12월)에 따르면 CBAM이 2026년 10월부터 본격 시행됩니다. 과도기(2023-2025)를 거쳐 2026년부터 실제 탄소세가 부과됩니다. 철강, 시멘트, 알루미늄, 비료, 전기 등 5개 산업이 우선 적용됩니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">European Commission. (2025, December). Carbon Border Adjustment Mechanism (CBAM): Implementation Timeline and Sectoral Coverage.</div>
 <a href="https://ec.europa.eu/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>2. 2. CBAM 규제사항</h3>
-<p>European Commission 발표(2025년 12월)에 따르면 CBAM 대상 제품 수입 시 탄소 배출량에 따라 세금이 부과됩니다. 탄소 가격은 €80/톤에서 시작하여 2030년까지 €130/톤으로 인상될 예정입니다. 한국 기업들의 탄소 감축 투자가 시급합니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">European Commission 발표(2025년 12월)에 따르면 CBAM 대상 제품 수입 시 탄소 배출량에 따라 세금이 부과됩니다. 탄소 가격은 €80/톤에서 시작하여 2030년까지 €130/톤으로 인상될 예정입니다. 한국 기업들의 탄소 감축 투자가 시급합니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">European Commission. (2025, December). CBAM Implementation Guidelines: Carbon Pricing and Compliance Requirements.</div>
 <a href="https://ec.europa.eu/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>3. 3. CBAM 대응 준비</h3>
-<p>World Bank 보고서(2025년 12월)에 따르면 CBAM 대응을 위해 기업들의 탄소 감축 투자가 급증하고 있습니다. 재생에너지 전환(+45%), 에너지 효율 개선(+38%), 탄소 포집 기술(+28%) 등이 주요 투자 분야입니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">World Bank 보고서(2025년 12월)에 따르면 CBAM 대응을 위해 기업들의 탄소 감축 투자가 급증하고 있습니다. 재생에너지 전환(+45%), 에너지 효율 개선(+38%), 탄소 포집 기술(+28%) 등이 주요 투자 분야입니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">World Bank. (2025, December). Carbon Pricing and CBAM Analysis: Corporate Adaptation Strategies.</div>
 <a href="https://www.worldbank.org/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
@@ -486,34 +529,36 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 <div class="summary-box">
 <h3>📋 세부 핵심 요약정보</h3>
 <div class="summary-content">
-<div>Global Reporting Initiative (GRI) 발표(2025년 12월)에 따르면 GRI 표준을 채택한 기업이 2025년 기준 15,000개를 넘었습니다. GRI 표준은 환경, 사회, 지배구조 등 광범위한 지속가능성 이슈를 다루고 있습니다. 글로벌 기업의 표준 채택 비율은 92%에 달합니다....</div>
-<div class="summary-visual"><canvas id="chart_summary_sustainability_report"></canvas></div>
+<div class="summary-text">Global Reporting Initiative (GRI) 발표(2025년 12월)에 따르면 GRI 표준을 채택한 기업이 2025년 기준 15,000개를 넘었습니다. GRI 표준은 환경, 사회, 지배구조 등 광범위한 지속가능성 이슈를 다루고 있습니다. 글로벌 기업의 표준 채택 비율은 92%에 달합니다....</div>
+<div class="summary-visual">
+<table id="table_sustainability_report"><tr><th>항목</th><th>내용</th></tr><tr><td>2026년</td><td>주요 변화</td></tr><tr><td>정책</td><td>규제 강화</td></tr></table>
+</div>
 </div>
 </div>
 <div class="insights">
 <div class="insight">
 <h3>1. 1. GRI 표준 도입</h3>
-<p>Global Reporting Initiative (GRI) 발표(2025년 12월)에 따르면 GRI 표준을 채택한 기업이 2025년 기준 15,000개를 넘었습니다. GRI 표준은 환경, 사회, 지배구조 등 광범위한 지속가능성 이슈를 다루고 있습니다. 글로벌 기업의 표준 채택 비율은 92%에 달합니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">Global Reporting Initiative (GRI) 발표(2025년 12월)에 따르면 GRI 표준을 채택한 기업이 2025년 기준 15,000개를 넘었습니다. GRI 표준은 환경, 사회, 지배구조 등 광범위한 지속가능성 이슈를 다루고 있습니다. 글로벌 기업의 표준 채택 비율은 92%에 달합니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">Global Reporting Initiative (GRI). (2025, December). GRI Standards 2024: Sustainability Reporting Framework.</div>
 <a href="https://www.globalreporting.org/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>2. 2. ISSB 기준 채택</h3>
-<p>International Sustainability Standards Board (ISSB) 발표(2025년 12월)에 따르면 IFRS S1(일반 요구사항)과 S2(기후 관련) 기준이 2024년 6월 발표되었습니다. 이미 50개 이상의 국가가 ISSB 기준 채택을 추진 중입니다. 2026년부터 주요 상장사의 의무 채택이 예상됩니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">International Sustainability Standards Board (ISSB) 발표(2025년 12월)에 따르면 IFRS S1(일반 요구사항)과 S2(기후 관련) 기준이 2024년 6월 발표되었습니다. 이미 50개 이상의 국가가 ISSB 기준 채택을 추진 중입니다. 2026년부터 주요 상장사의 의무 채택이 예상됩니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">International Sustainability Standards Board (ISSB). (2025, December). IFRS S1 and S2 Standards: Sustainability Disclosure Requirements.</div>
 <a href="https://www.issb.org/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
 <h3>3. 3. 대기업 보고서 사례</h3>
-<p>Bloomberg 데이터베이스(2025년 12월)에 따르면 글로벌 상위 500대 기업 중 98%가 지속가능경영보고서를 발표하고 있습니다. 평균 보고서 길이는 60~80페이지이며, 주요 내용은 탄소 감축 목표(95%), 사회적 책임(88%), 지배구조 개선(85%) 등입니다.</p>
-<div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #e2e8f0;">
-<div style="font-weight: 600; color: #666; margin-bottom: 10px;">🔗 출처 (APA 방식):</div>
+<p class="insight-content">Bloomberg 데이터베이스(2025년 12월)에 따르면 글로벌 상위 500대 기업 중 98%가 지속가능경영보고서를 발표하고 있습니다. 평균 보고서 길이는 60~80페이지이며, 주요 내용은 탄소 감축 목표(95%), 사회적 책임(88%), 지배구조 개선(85%) 등입니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
 <div class="source-citation">Bloomberg. (2025, December). Corporate Sustainability Reports Database: Global Reporting Trends.</div>
 <a href="https://www.bloomberg.com/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
@@ -523,7 +568,50 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 </div>
 <script>
 function showSection(id, e) { document.querySelectorAll(".section").forEach(s => s.classList.remove("active")); document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active")); document.getElementById(id).classList.add("active"); e.target.classList.add("active"); window.scrollTo(0, 0); createChart(id); }
-function createChart(id) { const c = document.getElementById("chart_summary_" + id); if (!c) return; const d = { industry_trends: { type: "bar", labels: ["반도체", "자동차", "석유화학", "철강", "섬유"], data: [15.2, 7.8, 5.4, 3.2, 2.1] }, raw_material_trends: { type: "line", labels: ["1월", "2월", "3월", "4월", "5월", "6월"], data: [85, 88, 92, 95, 98, 102] }, exchange_rate_trends: { type: "line", labels: ["1주", "2주", "3주", "4주"], data: [1470, 1475, 1478.5, 1480] }, market_trends: { type: "pie", labels: ["반도체", "배터리", "의약품", "화학", "기타"], data: [42, 38, 31, 25, 15] }, country_trends: { type: "bar", labels: ["미국", "중국", "유럽", "일본", "인도"], data: [12.5, 8.3, 6.7, 4.2, 9.1] }, regulatory_trends: { type: "bar", labels: ["EU", "미국", "중국", "일본", "한국"], data: [28, 22, 18, 12, 8] }, consumer_trends: { type: "line", labels: ["2022", "2023", "2024", "2025", "2026"], data: [55, 60, 65, 70, 72] }, overseas_certification: { type: "pie", labels: ["필수", "선택", "기타"], data: [60, 30, 10] }, overseas_exhibitions: { type: "bar", labels: ["CES", "MWC", "Hannover", "IFA", "SXSW"], data: [45, 38, 35, 32, 28] }, esg_trends: { type: "line", labels: ["2020", "2021", "2022", "2023", "2024"], data: [45, 55, 65, 75, 85] }, cbam_trends: { type: "bar", labels: ["시멘트", "철강", "알루미늄", "비료", "전기"], data: [15, 18, 12, 8, 10] }, sustainability_report: { type: "pie", labels: ["GRI", "ISSB", "기타"], data: [55, 35, 10] } }; const ch = d[id]; if (!ch) return; const ctx = c.getContext("2d"); new Chart(ctx, { type: ch.type, data: { labels: ch.labels, datasets: [{ label: "", data: ch.data, backgroundColor: ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6"], borderColor: "#fff", borderWidth: 2 }] }, options: { responsive: true, maintainAspectRatio: true, plugins: { legend: { display: ch.type === "pie" } } } }); }
+function createChart(id) {
+    const chartConfigs = {
+        industry_trends: { type: "bar", labels: ["반도체", "자동차", "석유화학", "철강", "섬유"], data: [15.2, 7.8, 5.4, 3.2, 2.1], colors: ["#A8D8EA", "#AA96DA", "#FCBAD3", "#FFFFD2", "#A8E6CF"] },
+        raw_material_trends: { type: "line", labels: ["1월", "2월", "3월", "4월", "5월", "6월"], data: [85, 88, 92, 95, 98, 102], color: "#AA96DA" },
+        exchange_rate_trends: { type: "line", labels: ["1주", "2주", "3주", "4주"], data: [1470, 1475, 1478.5, 1480], color: "#FCBAD3" },
+        market_trends: { type: "pie", labels: ["반도체", "배터리", "의약품", "화학", "기타"], data: [42, 38, 31, 25, 15], colors: ["#A8D8EA", "#AA96DA", "#FCBAD3", "#FFFFD2", "#A8E6CF"] },
+        consumer_trends: { type: "bar", labels: ["모바일", "소셜", "라이브", "전통", "기타"], data: [28, 35, 42, 15, 10], colors: ["#FFD3B6", "#FFAAA5", "#FF8B94", "#B4A7D6", "#C7CEEA"] },
+        cbam_trends: { type: "bar", labels: ["시멘트", "철강", "알루미늄", "비료", "전기"], data: [15, 18, 12, 8, 10], colors: ["#A8D8EA", "#AA96DA", "#FCBAD3", "#FFFFD2", "#A8E6CF"] }
+    };
+    
+    const config = chartConfigs[id];
+    if (!config) return;
+    
+    const canvas = document.getElementById("chart_" + id);
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext("2d");
+    const chartConfig = {
+        type: config.type,
+        data: {
+            labels: config.labels,
+            datasets: [{
+                label: "",
+                data: config.data,
+                backgroundColor: config.colors || config.color,
+                borderColor: "#fff",
+                borderWidth: 2,
+                borderRadius: 6
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: { display: config.type === "pie", labels: { font: { size: 12 }, padding: 15 } },
+                tooltip: { font: { size: 12 }, padding: 12 }
+            },
+            scales: config.type === "pie" ? {} : { y: { beginAtZero: true, ticks: { font: { size: 11 } } }, x: { ticks: { font: { size: 11 } } } }
+        }
+    };
+    
+    new Chart(ctx, chartConfig);
+}
+
 window.addEventListener("load", () => createChart("industry_trends"));
 </script>
 </body>
