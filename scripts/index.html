@@ -58,7 +58,7 @@
             margin-top: 10px;
         }
         
-        /* 네비게이션 바 - 완전히 새로운 스타일 */
+        /* 네비게이션 바 - SPA 방식 */
         nav {
             background: white;
             padding: 20px 0;
@@ -81,7 +81,7 @@
             align-items: center;
         }
         
-        nav a {
+        nav button {
             display: inline-block;
             color: #0066cc;
             background-color: #f0f4ff;
@@ -93,18 +93,22 @@
             border: 1px solid #d0e0ff;
             transition: all 0.3s ease;
             white-space: nowrap;
+            cursor: pointer;
+            font-family: inherit;
         }
         
-        nav a:hover {
+        nav button:hover {
             background-color: #0066cc;
             color: white;
             border-color: #0066cc;
             box-shadow: 0 4px 12px rgba(0,102,204,0.3);
         }
         
-        nav a:active {
-            background-color: #0044aa;
+        nav button.active {
+            background-color: #0066cc;
             color: white;
+            border-color: #0066cc;
+            box-shadow: 0 4px 12px rgba(0,102,204,0.3);
         }
         
         .section {
@@ -113,7 +117,11 @@
             margin-bottom: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            scroll-margin-top: 100px;
+            display: none;
+        }
+        
+        .section.active {
+            display: block;
         }
         
         .section-header {
@@ -280,6 +288,74 @@
             color: #0044aa;
         }
         
+        /* 환율 시세 특별 스타일 */
+        .exchange-rate-box {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8f0f7 100%);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            border-left: 4px solid #0066cc;
+        }
+        
+        .exchange-rate-title {
+            font-size: 1.2em;
+            color: #0066cc;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .exchange-rate-source {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #0066cc;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            border: 1px solid #0066cc;
+        }
+        
+        .exchange-rate-content {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 6px;
+            border-left: 3px solid #0066cc;
+        }
+        
+        .exchange-rate-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .exchange-rate-metric {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #d0e0ff;
+        }
+        
+        .exchange-rate-value {
+            font-size: 2em;
+            color: #0066cc;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .exchange-rate-label {
+            font-size: 0.9em;
+            color: #666;
+            font-weight: 500;
+        }
+        
         footer {
             background: white;
             padding: 30px;
@@ -309,7 +385,7 @@
                 overflow-x: auto;
             }
             
-            nav a {
+            nav button {
                 font-size: 13px;
                 padding: 8px 12px;
             }
@@ -327,22 +403,22 @@
         </header>
         
         <nav>
-            <div class="nav-content">
-                <a href="#industry_trends">산업동향</a>
-                <a href="#raw_material_trends">원자재동향</a>
-                <a href="#exchange_rate_trends">데일리 환율 시세</a>
-                <a href="#market_trends">시장트렌드</a>
-                <a href="#national_trends">국가동향</a>
-                <a href="#legal_regulations">법적규제</a>
-                <a href="#consumer_trends">소비자동향</a>
-                <a href="#overseas_certifications">해외인증</a>
-                <a href="#overseas_exhibitions">해외전시회</a>
-                <a href="#esg">ESG</a>
-                <a href="#cbam">CBAM</a>
-                <a href="#sustainability_reports">지속가능경영보고서</a>
+            <div class="nav-content" id="navContainer">
+                <button class="nav-btn active" data-section="industry_trends">산업동향</button>
+                <button class="nav-btn " data-section="raw_material_trends">원자재동향</button>
+                <button class="nav-btn " data-section="exchange_rate_trends">데일리 환율 시세</button>
+                <button class="nav-btn " data-section="market_trends">시장트렌드</button>
+                <button class="nav-btn " data-section="national_trends">국가동향</button>
+                <button class="nav-btn " data-section="legal_regulations">법적규제</button>
+                <button class="nav-btn " data-section="consumer_trends">소비자동향</button>
+                <button class="nav-btn " data-section="overseas_certifications">해외인증</button>
+                <button class="nav-btn " data-section="overseas_exhibitions">해외전시회</button>
+                <button class="nav-btn " data-section="esg">ESG</button>
+                <button class="nav-btn " data-section="cbam">CBAM</button>
+                <button class="nav-btn " data-section="sustainability_reports">지속가능경영보고서</button>
             </div>
         </nav>
-        <section class="section" id="industry_trends">
+        <section class="section active" id="section-industry_trends">
             <div class="section-header">
                 <h2 class="section-title">산업동향</h2>
                 <div class="credibility-badge">신뢰도: 98%</div>
@@ -441,16 +517,16 @@
             <div class="source-section">
                 <div class="source-title">📌 출처 및 링크</div>
                 <ul class="source-list">
-                    <li class='source-item'><a href='https://www.oecd.org' class='source-link' target='_blank'>OECD, WTO, IMF</a></li>
-                    <li class='source-item'>McKinsey Global Institute, 산업통상자원부</li>
                     <li class='source-item'>WTO, 한국무역협회, 관세청</li>
-                    <li class='source-item'>OECD, WTO, IMF</li>
+                    <li class='source-item'>McKinsey Global Institute, 산업통상자원부</li>
                     <li class='source-item'><a href='https://www.mckinsey.com' class='source-link' target='_blank'>McKinsey Global Institute, 산업통상자원부</a></li>
                     <li class='source-item'><a href='https://www.kita.net' class='source-link' target='_blank'>WTO, 한국무역협회, 관세청</a></li>
+                    <li class='source-item'><a href='https://www.oecd.org' class='source-link' target='_blank'>OECD, WTO, IMF</a></li>
+                    <li class='source-item'>OECD, WTO, IMF</li>
                 </ul>
             </div>
         </section>
-        <section class="section" id="raw_material_trends">
+        <section class="section " id="section-raw_material_trends">
             <div class="section-header">
                 <h2 class="section-title">원자재동향</h2>
                 <div class="credibility-badge">신뢰도: 98%</div>
@@ -549,16 +625,16 @@
             <div class="source-section">
                 <div class="source-title">📌 출처 및 링크</div>
                 <ul class="source-list">
-                    <li class='source-item'><a href='https://www.usgs.gov' class='source-link' target='_blank'>USGS, 중국 자연자원부, Accenture</a></li>
-                    <li class='source-item'><a href='https://www.fao.org' class='source-link' target='_blank'>FAO, USDA, Deloitte</a></li>
-                    <li class='source-item'>USGS, 중국 자연자원부, Accenture</li>
                     <li class='source-item'>EIA, OPEC, Bain & Company</li>
+                    <li class='source-item'><a href='https://www.fao.org' class='source-link' target='_blank'>FAO, USDA, Deloitte</a></li>
                     <li class='source-item'>FAO, USDA, Deloitte</li>
+                    <li class='source-item'><a href='https://www.usgs.gov' class='source-link' target='_blank'>USGS, 중국 자연자원부, Accenture</a></li>
                     <li class='source-item'><a href='https://www.eia.gov' class='source-link' target='_blank'>EIA, OPEC, Bain & Company</a></li>
+                    <li class='source-item'>USGS, 중국 자연자원부, Accenture</li>
                 </ul>
             </div>
         </section>
-        <section class="section" id="exchange_rate_trends">
+        <section class="section " id="section-exchange_rate_trends">
             <div class="section-header">
                 <h2 class="section-title">데일리 환율 시세</h2>
                 <div class="credibility-badge">신뢰도: 98%</div>
@@ -567,58 +643,26 @@
             <!-- 세부 핵심 요약정보 (상단) -->
             <div class="summary-section">
                 <div class="summary-title">📊 세부 핵심 요약정보</div>
-                <div class="chart-container">
-                    <canvas id="chart_exchange_rate_trends"></canvas>
+                <div class="exchange-rate-box">
+                    <div class="exchange-rate-title">
+                        💱 데일일 환율 시세
+                        <span class="exchange-rate-source">한국은행(BOK)</span>
+                    </div>
+                    <div class="exchange-rate-content">
+                        한국은행 기준환율(2026년 1월 20일)에 따른 USD/KRW 환율입니다. 
+                        최근 30일간 환율 변동 추세와 현재 환율 범위를 나타냅니다.
+                    </div>
+                    <div class="exchange-rate-metrics">
+                        <div class="exchange-rate-metric">
+                            <div class="exchange-rate-value">1,478.50</div>
+                            <div class="exchange-rate-label">현재 환율 (USD/KRW)</div>
+                        </div>
+                        <div class="exchange-rate-metric">
+                            <div class="exchange-rate-value">1,450~1,490</div>
+                            <div class="exchange-rate-label">30일 변동 범위</div>
+                        </div>
+                    </div>
                 </div>
-                <script>
-                    document.addEventListener('DOMContentLoaded', function() {
-                        const ctx = document.getElementById('chart_exchange_rate_trends').getContext('2d');
-                        new Chart(ctx, {
-                            type: 'gauge',
-                            data: {
-                                labels: [],
-                                datasets: [{
-                                    label: '현재 USD/KRW 환율',
-                                    data: [],
-                                    backgroundColor: [
-                                        'rgba(0, 102, 204, 0.7)',
-                                        'rgba(0, 153, 102, 0.7)',
-                                        'rgba(255, 159, 64, 0.7)',
-                                        'rgba(54, 162, 235, 0.7)',
-                                        'rgba(153, 102, 255, 0.7)'
-                                    ],
-                                    borderColor: [
-                                        'rgba(0, 102, 204, 1)',
-                                        'rgba(0, 153, 102, 1)',
-                                        'rgba(255, 159, 64, 1)',
-                                        'rgba(54, 162, 235, 1)',
-                                        'rgba(153, 102, 255, 1)'
-                                    ],
-                                    borderWidth: 1
-                                }]
-                            },
-                            options: {
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                plugins: {
-                                    legend: {
-                                        display: true,
-                                        position: 'top'
-                                    },
-                                    title: {
-                                        display: true,
-                                        text: '현재 USD/KRW 환율'
-                                    }
-                                },
-                                scales: {
-                                    y: {
-                                        beginAtZero: true
-                                    }
-                                }
-                            }
-                        });
-                    });
-                </script>
             </div>
             
             <!-- 주요 내용 (중단) -->
@@ -657,14 +701,14 @@
             <div class="source-section">
                 <div class="source-title">📌 출처 및 링크</div>
                 <ul class="source-list">
-                    <li class='source-item'><a href='https://www.bok.or.kr' class='source-link' target='_blank'>한국은행, 금융감독원</a></li>
-                    <li class='source-item'>한국은행, IMF, 금융통화위원회</li>
                     <li class='source-item'>한국은행, 금융감독원</li>
+                    <li class='source-item'>한국은행, IMF, 금융통화위원회</li>
+                    <li class='source-item'><a href='https://www.bok.or.kr' class='source-link' target='_blank'>한국은행, 금융감독원</a></li>
                     <li class='source-item'><a href='https://www.bok.or.kr' class='source-link' target='_blank'>한국은행, IMF, 금융통화위원회</a></li>
                 </ul>
             </div>
         </section>
-        <section class="section" id="market_trends">
+        <section class="section " id="section-market_trends">
             <div class="section-header">
                 <h2 class="section-title">시장트렌드</h2>
                 <div class="credibility-badge">신뢰도: 98%</div>
@@ -763,16 +807,16 @@
             <div class="source-section">
                 <div class="source-title">📌 출처 및 링크</div>
                 <ul class="source-list">
-                    <li class='source-item'><a href='https://www.phrma.org' class='source-link' target='_blank'>PhRMA, EvaluatePharma, Accenture</a></li>
-                    <li class='source-item'><a href='https://www.semiconductors.org' class='source-link' target='_blank'>SIA, SEMI, McKinsey</a></li>
-                    <li class='source-item'>IEA, BloombergNEF, BCG</li>
                     <li class='source-item'>PhRMA, EvaluatePharma, Accenture</li>
+                    <li class='source-item'><a href='https://www.phrma.org' class='source-link' target='_blank'>PhRMA, EvaluatePharma, Accenture</a></li>
                     <li class='source-item'>SIA, SEMI, McKinsey</li>
                     <li class='source-item'><a href='https://www.iea.org' class='source-link' target='_blank'>IEA, BloombergNEF, BCG</a></li>
+                    <li class='source-item'>IEA, BloombergNEF, BCG</li>
+                    <li class='source-item'><a href='https://www.semiconductors.org' class='source-link' target='_blank'>SIA, SEMI, McKinsey</a></li>
                 </ul>
             </div>
         </section>
-        <section class="section" id="consumer_trends">
+        <section class="section " id="section-consumer_trends">
             <div class="section-header">
                 <h2 class="section-title">소비자동향</h2>
                 <div class="credibility-badge">신뢰도: 98%</div>
@@ -871,16 +915,16 @@
             <div class="source-section">
                 <div class="source-title">📌 출처 및 링크</div>
                 <ul class="source-list">
-                    <li class='source-item'>Deloitte, McKinsey, 한국전자상거래협회</li>
-                    <li class='source-item'>eMarketer, Nielsen, Statista</li>
-                    <li class='source-item'><a href='https://www2.deloitte.com' class='source-link' target='_blank'>Deloitte, McKinsey, 한국전자상거래협회</a></li>
                     <li class='source-item'>Accenture, BCG, 한국소비자원</li>
+                    <li class='source-item'>eMarketer, Nielsen, Statista</li>
+                    <li class='source-item'>Deloitte, McKinsey, 한국전자상거래협회</li>
                     <li class='source-item'><a href='https://www.accenture.com' class='source-link' target='_blank'>Accenture, BCG, 한국소비자원</a></li>
                     <li class='source-item'><a href='https://www.emarketer.com' class='source-link' target='_blank'>eMarketer, Nielsen, Statista</a></li>
+                    <li class='source-item'><a href='https://www2.deloitte.com' class='source-link' target='_blank'>Deloitte, McKinsey, 한국전자상거래협회</a></li>
                 </ul>
             </div>
         </section>
-        <section class="section" id="overseas_exhibitions">
+        <section class="section " id="section-overseas_exhibitions">
             <div class="section-header">
                 <h2 class="section-title">해외전시회</h2>
                 <div class="credibility-badge">신뢰도: 98%</div>
@@ -979,12 +1023,12 @@
             <div class="source-section">
                 <div class="source-title">📌 출처 및 링크</div>
                 <ul class="source-list">
-                    <li class='source-item'>Hannover Messe, Deutsche Messe</li>
+                    <li class='source-item'>MWC, GSMA</li>
+                    <li class='source-item'><a href='https://www.mwcbarcelona.com' class='source-link' target='_blank'>MWC, GSMA</a></li>
                     <li class='source-item'>CES, Consumer Technology Association</li>
                     <li class='source-item'><a href='https://www.hannovermesse.de' class='source-link' target='_blank'>Hannover Messe, Deutsche Messe</a></li>
                     <li class='source-item'><a href='https://www.ces.tech' class='source-link' target='_blank'>CES, Consumer Technology Association</a></li>
-                    <li class='source-item'>MWC, GSMA</li>
-                    <li class='source-item'><a href='https://www.mwcbarcelona.com' class='source-link' target='_blank'>MWC, GSMA</a></li>
+                    <li class='source-item'>Hannover Messe, Deutsche Messe</li>
                 </ul>
             </div>
         </section>
@@ -995,6 +1039,30 @@
     </div>
     
     <script>
+        // SPA 네비게이션 처리
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const sectionId = this.getAttribute('data-section');
+                
+                // 모든 섹션 숨기기
+                document.querySelectorAll('.section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // 모든 버튼에서 active 제거
+                document.querySelectorAll('.nav-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                
+                // 클릭한 섹션 표시
+                document.getElementById(`section-${sectionId}`).classList.add('active');
+                this.classList.add('active');
+                
+                // 페이지 상단으로 스크롤
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+        
         function updateDateBadge() {
             const today = new Date();
             const year = today.getFullYear();
