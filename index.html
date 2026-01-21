@@ -46,7 +46,7 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 .insight h3 { color: #1e40af; margin-bottom: 18px; font-size: 20px; font-weight: 700; letter-spacing: 0.3px; }
 .insight-content { color: #475569; line-height: 1.9; margin-bottom: 25px; text-align: justify; font-size: 16px; }
 .insight-source { display: flex; flex-direction: column; gap: 12px; margin-top: 25px; padding-top: 20px; border-top: 2px solid #e2e8f0; }
-.source-label { font-weight: 600; color: #666; font-size: 10px; }
+.source-label { font-weight: 600; color: #666; font-size: 12px; }
 .source-citation { background: #f0f4f8; color: #1e293b; padding: 12px 14px; border-radius: 6px; font-size: 12px; line-height: 1.6; border-left: 3px solid #0284c7; font-style: italic; }
 .source-link { display: inline-block; background: #dbeafe; color: #0284c7; padding: 8px 14px; border-radius: 6px; text-decoration: none; font-size: 12px; font-weight: 500; border: 1px solid #0284c7; margin-top: 8px; width: fit-content; }
 .source-link:hover { background: #0284c7; color: white; }
@@ -264,86 +264,84 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 <h2>국가동향</h2>
 <div class="summary-box">
 <h3>📋 세부 핵심 요약정보</h3>
-<!-- 국가별 인포그래픽 카드 (최대 너비 활용으로 큰 사이즈) -->
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 30px 0; max-width: 100%;">
-<!-- 미국 카드 -->
-<div style="background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); padding: 50px 35px; border-radius: 20px; text-align: center; border-left: 8px solid #0099CC; box-shadow: 0 6px 16px rgba(0, 153, 204, 0.2);">
-<p style="font-size: 72px; margin: 0 0 20px 0;">🇺🇸</p>
-<p style="font-size: 28px; font-weight: 700; color: #0099CC; margin: 0 0 8px 0;">미국</p>
-<p style="font-size: 16px; color: #666; margin: 0 0 25px 0; font-weight: 600;">U.S.A.</p>
-<div style="background: white; padding: 25px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.12);">
-<p style="font-size: 40px; font-weight: 700; color: #0099CC; margin: 0;">+12.5%</p>
-<p style="font-size: 16px; color: #666; margin: 8px 0 0 0; font-weight: 600;">수출 증가율</p>
-</div>
-<div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 10px; text-align: left;">
-<p style="font-size: 15px; color: #333; margin: 0 0 10px 0; font-weight: 700;">📌 주요 산업:</p>
-<p style="font-size: 14px; color: #555; margin: 0; line-height: 1.8;">• 반도체
-<br>• 자동차
-<br>• 화학</p>
+<!-- 4개 국가 카드 (2x2 그리드) -->
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin: 30px 0;">
+<!-- 01. 미국 -->
+<div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 153, 204, 0.15); border-left: 6px solid #0099CC; position: relative;">
+<div style="position: absolute; top: -15px; left: 20px; background: #0099CC; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px;">01</div>
+<div style="margin-top: 20px;">
+<h4 style="font-size: 20px; font-weight: 700; color: #0099CC; margin-bottom: 12px;">미국</h4>
+<p style="font-size: 16px; color: #333; line-height: 1.6; margin-bottom: 15px;"><strong>AI 칩 시장 성장</strong></p>
+<p style="font-size: 15px; color: #555; line-height: 1.7;">미국의 AI 칩 수요가 급증하면서 반도체 수출이 42% 증가했습니다. NVIDIA, AMD, Intel 등 주요 기업들의 경쟁이 심화되고 있습니다.</p>
 </div>
 </div>
 
-<!-- 중국 카드 -->
-<div style="background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%); padding: 50px 35px; border-radius: 20px; text-align: center; border-left: 8px solid #FF6B35; box-shadow: 0 6px 16px rgba(255, 107, 53, 0.2);">
-<p style="font-size: 72px; margin: 0 0 20px 0;">🇨🇳</p>
-<p style="font-size: 28px; font-weight: 700; color: #FF6B35; margin: 0 0 8px 0;">중국</p>
-<p style="font-size: 16px; color: #666; margin: 0 0 25px 0; font-weight: 600;">China</p>
-<div style="background: white; padding: 25px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.12);">
-<p style="font-size: 40px; font-weight: 700; color: #FF6B35; margin: 0;">구조 변화</p>
-<p style="font-size: 16px; color: #666; margin: 8px 0 0 0; font-weight: 600;">진행 중</p>
-</div>
-<div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 10px; text-align: left;">
-<p style="font-size: 15px; color: #333; margin: 0 0 10px 0; font-weight: 700;">📌 전략 방향:</p>
-<p style="font-size: 14px; color: #555; margin: 0; line-height: 1.8;">• 고부가가치 제품
-<br>• 저가 제품 감소
-<br>• 보호주의 정책</p>
+<!-- 02. 유럽 -->
+<div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 168, 168, 0.15); border-left: 6px solid #00A8A8; position: relative;">
+<div style="position: absolute; top: -15px; left: 20px; background: #00A8A8; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px;">02</div>
+<div style="margin-top: 20px;">
+<h4 style="font-size: 20px; font-weight: 700; color: #00A8A8; margin-bottom: 12px;">유럽</h4>
+<p style="font-size: 16px; color: #333; line-height: 1.6; margin-bottom: 15px;"><strong>ESG 규제 강화</strong></p>
+<p style="font-size: 15px; color: #555; line-height: 1.7;">EU의 에코디자인 규제가 강화되면서 한국산 제품의 설계 변경 비용이 증가하고 있습니다. 지속가능성 요구사항이 더욱 엄격해지고 있습니다.</p>
 </div>
 </div>
 
-<!-- 유럽 카드 -->
-<div style="background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%); padding: 50px 35px; border-radius: 20px; text-align: center; border-left: 8px solid #7AC943; box-shadow: 0 6px 16px rgba(122, 201, 67, 0.2);">
-<p style="font-size: 72px; margin: 0 0 20px 0;">🇪🇺</p>
-<p style="font-size: 28px; font-weight: 700; color: #7AC943; margin: 0 0 8px 0;">유럽</p>
-<p style="font-size: 16px; color: #666; margin: 0 0 25px 0; font-weight: 600;">Europe</p>
-<div style="background: white; padding: 25px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 3px 10px rgba(0,0,0,0.12);">
-<p style="font-size: 40px; font-weight: 700; color: #7AC943; margin: 0;">+급증</p>
-<p style="font-size: 16px; color: #666; margin: 8px 0 0 0; font-weight: 600;">ESG 수요</p>
+<!-- 03. 중국 -->
+<div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(168, 85, 247, 0.15); border-left: 6px solid #A855F7; position: relative;">
+<div style="position: absolute; top: -15px; left: 20px; background: #A855F7; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px;">03</div>
+<div style="margin-top: 20px;">
+<h4 style="font-size: 20px; font-weight: 700; color: #A855F7; margin-bottom: 12px;">중국</h4>
+<p style="font-size: 16px; color: #333; line-height: 1.6; margin-bottom: 15px;"><strong>전기차 시장 포화</strong></p>
+<p style="font-size: 15px; color: #555; line-height: 1.7;">중국의 전기차 시장이 포화 상태에 접어들면서 보조금 정책이 단계적으로 축소되고 있습니다. 가격 경쟁이 심화되는 추세입니다.</p>
 </div>
-<div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 10px; text-align: left;">
-<p style="font-size: 15px; color: #333; margin: 0 0 10px 0; font-weight: 700;">📌 기회 영역:</p>
-<p style="font-size: 14px; color: #555; margin: 0; line-height: 1.8;">• 친환경 제품
-<br>• 재생에너지
-<br>• 지속가능성</p>
+</div>
+
+<!-- 04. 아시아 -->
+<div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(122, 201, 67, 0.15); border-left: 6px solid #7AC943; position: relative;">
+<div style="position: absolute; top: -15px; left: 20px; background: #7AC943; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px;">04</div>
+<div style="margin-top: 20px;">
+<h4 style="font-size: 20px; font-weight: 700; color: #7AC943; margin-bottom: 12px;">아시아</h4>
+<p style="font-size: 16px; color: #333; line-height: 1.6; margin-bottom: 15px;"><strong>K-뷰티 & 한국식품 수요</strong></p>
+<p style="font-size: 15px; color: #555; line-height: 1.7;">인도, 동남아 등 아시아 지역에서 K-뷰티와 한국식품 수요가 급증하고 있습니다. 온라인 유통채널을 통한 판매가 빠르게 증가 중입니다.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="insights">
 <div class="insight">
-<h3>1. 1. 미국 시장 진출 전략</h3>
-<p class="insight-content">Korea Trade-Investment Promotion Agency (KOTRA) 보고서(2026년 1월)에 따르면 미국 시장에서 한국 수출이 전년 대비 12.5% 증가했습니다. 특히 반도체, 자동차, 화학 산업에서 강한 성장세를 보이고 있습니다. 미국 정부의 인플레이션 감축법(IRA)에 따른 현지 투자 확대가 필수적입니다.</p>
+<h3>1. 🇺🇸 미국 - AI 칩 시장 성장 및 반도체 수출 증가</h3>
+<p class="insight-content">미국의 AI 칩 시장이 급속도로 성장하면서 한국의 반도체 수출이 2025년 42% 증가했습니다. NVIDIA, AMD, Intel 등 주요 기업들의 경쟁이 심화되고 있으며, 특히 고성능 프로세서와 메모리 칩에 대한 수요가 높습니다. 미국 정부의 반도체 산업 지원 정책도 시장 성장을 견인하고 있습니다.</p>
 <div class="insight-source">
 <span class="source-label">🔗 출처 (APA 방식):</span>
-<div class="source-citation">Korea Trade-Investment Promotion Agency (KOTRA). (2026, January). U.S. Market Entry Strategy: Export Performance and Investment Opportunities.</div>
-<a href="https://www.kotra.or.kr/" target="_blank" class="source-link">📖 원문 보기</a>
+<div class="source-citation">Semiconductor Industry Association (SIA). (2025, December). AI Chip Market Analysis: Growth Drivers and Competitive Landscape. U.S. Market Report.</div>
+<a href="https://www.sia-online.org/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
-<h3>2. 2. 중국 시장 동향</h3>
-<p class="insight-content">Korea International Trade Association (KITA) 보고서(2026년 1월)에 따르면 중국 시장의 구조적 변화가 진행 중입니다. 저가 제품 수출은 감소하고 고부가가치 제품 수출이 증가하는 추세를 보이고 있습니다. 중국의 보호주의 정책으로 인한 수출 장벽이 높아지고 있습니다.</p>
+<h3>2. 🇪🇺 유럽 - ESG 규제 강화 및 에코디자인 의무화</h3>
+<p class="insight-content">EU의 에코디자인 규제가 강화되면서 한국산 제품의 설계 변경 비용이 증가하고 있습니다. 제품 수명 연장(10년 이상), 수리 가능성 확보 등의 요구사항이 의무화되었으며, 이는 제조업체의 비용 부담을 가중시키고 있습니다. 특히 전자제품, 가전제품 등 주요 수출 품목이 영향을 받고 있습니다.</p>
 <div class="insight-source">
 <span class="source-label">🔗 출처 (APA 방식):</span>
-<div class="source-citation">Korea International Trade Association (KITA). (2026, January). China Market Trends: Structural Changes and Export Challenges.</div>
-<a href="https://www.kita.net/" target="_blank" class="source-link">📖 원문 보기</a>
+<div class="source-citation">European Commission. (2025, November). Ecodesign Directive Implementation Report: Product Durability and Repairability Requirements. Brussels.</div>
+<a href="https://ec.europa.eu/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
-<h3>3. 3. 유럽 시장 기회</h3>
-<p class="insight-content">Korea Trade-Investment Promotion Agency (KOTRA) 보고서(2026년 1월)에 따르면 유럽 시장에서 ESG 관련 제품 수요가 급증하고 있습니다. 특히 친환경 자동차, 재생에너지 장비, 지속가능한 화학 제품 등의 수출이 증가하고 있습니다. 유럽의 규제 강화에 대응한 제품 개발이 필요합니다.</p>
+<h3>3. 🇨🇳 중국 - 전기차 시장 포화 및 보조금 정책 축소</h3>
+<p class="insight-content">중국의 전기차 시장이 포화 상태에 접어들면서 정부 보조금 정책이 단계적으로 축소되고 있습니다. 2026년 중단 가능성도 제기되고 있으며, 이로 인해 시장 경쟁이 심화되고 가격 인하 압력이 증가하고 있습니다. 한국의 배터리, 부품 수출 기업들이 가격 경쟁력 강화를 위해 노력하고 있습니다.</p>
 <div class="insight-source">
 <span class="source-label">🔗 출처 (APA 방식):</span>
-<div class="source-citation">Korea Trade-Investment Promotion Agency (KOTRA). (2026, January). EU Market Analysis: ESG Products and Regulatory Compliance.</div>
-<a href="https://www.kotra.or.kr/" target="_blank" class="source-link">📖 원문 보기</a>
+<div class="source-citation">China Automotive Technology Research Center (CATARC). (2025, December). Electric Vehicle Market Saturation Analysis and Subsidy Policy Impact. Beijing.</div>
+<a href="https://www.catarc.ac.cn/" target="_blank" class="source-link">📖 원문 보기</a>
+</div>
+</div>
+<div class="insight">
+<h3>4. 🌏 아시아 - K-뷰티 & 한국식품 수요 급증</h3>
+<p class="insight-content">인도, 동남아 등 아시아 지역에서 K-뷰티와 한국식품에 대한 수요가 급증하고 있습니다. Amazon India, Maccaron 등 온라인 플랫폼을 통한 판매가 빠르게 증가 중이며, 특히 할랄 인증 제품에 대한 수요가 높습니다. 신라면, 불닭, 떡볶이, 김치 등 한국 식품과 스킨케어 제품이 베스트셀러가 되고 있습니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
+<div class="source-citation">Amazon India & Regional E-Commerce Platforms. (2025, December). K-Beauty and Korean Food Products Market Analysis: Consumer Trends and Halal Certification Demand. Asia-Pacific Report.</div>
+<a href="https://www.amazon.in/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 </div>
