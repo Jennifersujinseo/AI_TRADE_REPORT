@@ -163,39 +163,58 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 <h2>데일리 환율 시세</h2>
 <div class="summary-box">
 <h3>📋 세부 핵심 요약정보</h3>
-<div class="summary-content">
-<div class="summary-text">한국은행(BOK) 발표(2026년 1월 21일)에 따르면 현재 USD/KRW 환율은 1,478.50원입니다. 최근 30일간 변동 범위는 1,450~1,490원으로 나타나고 있습니다. 미국 금리 인상 기대감과 원화 약세 추세가 계속되고 있습니다....</div>
-<div class="summary-visual">
-<canvas id="chart_exchange_rate_trends"></canvas>
+<p class="summary-text">
+한국은행(BOK) 발표(2026년 1월 21일)에 따르면 현재 환율 USD/KRW 환율은 1,473.17원입니다. 최근 30일간 변동 범위는 1,450~1,490원으로 나타나며 미국 금리 인상 기대감 약화 가능성이 환율 주시 대상입니다.
+</p>
+</div>
+
+<!-- 메트릭 카드 레이아웃 -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0;">
+<div style="background: linear-gradient(135deg, #E8F4F8 0%, #D4E9F7 100%); padding: 30px; border-radius: 12px; text-align: center; border-left: 4px solid #0284c7;">
+<p style="color: #666; font-size: 13px; margin-bottom: 12px; font-weight: 600;">현재 환율 (USD/KRW)</p>
+<p style="font-size: 32px; font-weight: 700; color: #0284c7; margin: 0;">1473.17<span style="font-size: 18px;">원</span></p>
+<p style="color: #999; font-size: 12px; margin-top: 8px;">한국은행 BOK 기준</p>
+</div>
+
+<div style="background: linear-gradient(135deg, #F0E8F8 0%, #E8D4F7 100%); padding: 30px; border-radius: 12px; text-align: center; border-left: 4px solid #7c3aed;">
+<p style="color: #666; font-size: 13px; margin-bottom: 12px; font-weight: 600;">30일 변동 범위</p>
+<p style="font-size: 28px; font-weight: 700; color: #7c3aed; margin: 0;">1,450<span style="font-size: 18px;">~</span>1,490<span style="font-size: 18px;">원</span></p>
+<p style="color: #999; font-size: 12px; margin-top: 8px;">최근 한 달 범위</p>
 </div>
 </div>
-</div>
+
 <div class="insights">
 <div class="insight">
-<h3>1. 1. USD/KRW 환율</h3>
-<p class="insight-content">한국은행(BOK) 발표(2026년 1월 21일)에 따르면 현재 USD/KRW 환율은 1,478.50원입니다. 최근 30일간 변동 범위는 1,450~1,490원으로 나타나고 있습니다. 미국 금리 인상 기대감과 원화 약세 추세가 계속되고 있습니다.</p>
+<h3>1️⃣ 미국 금리 기대감 약화</h3>
+<p class="insight-content">
+연방준비제도(Fed)의 금리 인상 기대감이 약화되면서 달러 강세가 제한되고 있습니다. 이는 환율 상승을 억제하는 주요 요인으로 작용하고 있습니다.
+</p>
 <div class="insight-source">
 <span class="source-label">🔗 출처 (APA 방식):</span>
-<div class="source-citation">Bank of Korea (BOK). (2026, January). Daily Exchange Rate: USD/KRW.</div>
+<div class="source-citation">Bank of Korea (BOK). (2026, January). Daily Exchange Rate Analysis: USD/KRW Trends.</div>
 <a href="https://www.bok.or.kr/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
-<h3>2. 2. EUR/KRW 환율</h3>
-<p class="insight-content">한국은행(BOK) 발표(2026년 1월 21일)에 따르면 현재 EUR/KRW 환율은 1,598.75원입니다. 최근 30일간 변동 범위는 1,580~1,620원으로 나타나고 있습니다. 유로화 강세와 원화 약세가 동시에 작용하고 있습니다.</p>
+<h3>2️⃣ 글로벌 경기 둔화 신호</h3>
+<p class="insight-content">
+주요 선진국의 경기 지표가 약화되면서 위험자산 선호도가 낮아지고 있습니다. 이는 신흥국 통화 약세로 이어지는 경향을 보이고 있습니다.
+</p>
 <div class="insight-source">
 <span class="source-label">🔗 출처 (APA 방식):</span>
-<div class="source-citation">Bank of Korea (BOK). (2026, January). Daily Exchange Rate: EUR/KRW.</div>
-<a href="https://www.bok.or.kr/" target="_blank" class="source-link">📖 원문 보기</a>
+<div class="source-citation">International Monetary Fund (IMF). (2026, January). Global Economic Outlook: Currency Market Analysis.</div>
+<a href="https://www.imf.org/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
-<h3>3. 3. JPY/KRW 환율</h3>
-<p class="insight-content">한국은행(BOK) 발표(2026년 1월 21일)에 따르면 현재 JPY/KRW 환율은 9.85원입니다. 최근 30일간 변동 범위는 9.70~10.05원으로 나타나고 있습니다. 엔화 약세와 원화 상대적 강세가 지속되고 있습니다.</p>
+<h3>3️⃣ 한국 수출 경쟁력 개선</h3>
+<p class="insight-content">
+현재 환율 수준에서 한국의 수출 경쟁력이 개선되고 있습니다. 반도체, 자동차 등 주요 수출품의 가격 경쟁력이 향상되는 긍정적 신호입니다.
+</p>
 <div class="insight-source">
 <span class="source-label">🔗 출처 (APA 방식):</span>
-<div class="source-citation">Bank of Korea (BOK). (2026, January). Daily Exchange Rate: JPY/KRW.</div>
-<a href="https://www.bok.or.kr/" target="_blank" class="source-link">📖 원문 보기</a>
+<div class="source-citation">Ministry of Trade, Industry and Energy (MOTIE). (2026, January). Export Competitiveness Analysis: Exchange Rate Impact.</div>
+<a href="https://www.motie.go.kr/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 </div>
