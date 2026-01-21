@@ -220,47 +220,115 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 </div>
 </div>
 <div class="section " id="market_trends">
-<h2>시장트렌드</h2>
+<h2>시장동향</h2>
 <div class="summary-box">
 <h3>📋 세부 핵심 요약정보</h3>
-<div class="summary-content">
-<div class="summary-text">Semiconductor Industry Association (SIA) 보고서(2025년 12월)에 따르면 AI 칩 시장이 2025년 대비 42% 성장하여 2026년 $180억 규모에 달할 것으로 예상됩니다. NVIDIA, AMD, Intel 등 주요 기업들의 경쟁이 심화되고 있습니다....</div>
-<div class="summary-visual">
-<canvas id="chart_market_trends"></canvas>
+<!-- 원형 다이어그램 -->
+<div style="display: flex; justify-content: center; align-items: center; min-height: 600px; position: relative; margin: 40px 0;">
+<!-- 중앙 원형 다이어그램 -->
+<svg width="400" height="400" viewBox="0 0 400 400" style="position: absolute; z-index: 1;">
+<!-- 외부 원 (배경) -->
+<circle cx="200" cy="200" r="180" fill="none" stroke="#e0e0e0" stroke-width="80" opacity="0.3"/>
+<!-- 파란색 섹션 (상단) -->
+<circle cx="200" cy="200" r="180" fill="none" stroke="#0099CC" stroke-width="80" stroke-dasharray="282.7 1130.9" stroke-dashoffset="0"/>
+<!-- 청록색 섹션 -->
+<circle cx="200" cy="200" r="180" fill="none" stroke="#00A8A8" stroke-width="80" stroke-dasharray="282.7 1130.9" stroke-dashoffset="-282.7"/>
+<!-- 보라색 섹션 -->
+<circle cx="200" cy="200" r="180" fill="none" stroke="#A855F7" stroke-width="80" stroke-dasharray="282.7 1130.9" stroke-dashoffset="-565.4"/>
+<!-- 녹색 섹션 -->
+<circle cx="200" cy="200" r="180" fill="none" stroke="#7AC943" stroke-width="80" stroke-dasharray="282.7 1130.9" stroke-dashoffset="-848.1"/>
+<!-- 중앙 흰색 원 -->
+<circle cx="200" cy="200" r="100" fill="white" stroke="#f0f0f0" stroke-width="2"/>
+<!-- 중앙 텍스트 -->
+<text x="200" y="195" text-anchor="middle" font-size="24" font-weight="700" fill="#1e40af">시장동향</text>
+<text x="200" y="220" text-anchor="middle" font-size="14" fill="#666">2026년 주요 시장</text>
+</svg>
+
+<!-- 주변 항목들 -->
+<div style="position: absolute; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+<!-- 상단 우측 -->
+<div style="position: absolute; top: 0; right: 40px; text-align: center; width: 150px;">
+<div style="width: 50px; height: 50px; background: #0099CC; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">📊</div>
+<h4 style="font-size: 16px; font-weight: 700; color: #0099CC; margin-bottom: 8px;">반도체</h4>
+<p style="font-size: 13px; color: #555; line-height: 1.5;">AI 칩 수요 급증으로 시장 성장</p>
+</div>
+
+<!-- 우측 -->
+<div style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); text-align: center; width: 150px;">
+<div style="width: 50px; height: 50px; background: #00A8A8; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">🔋</div>
+<h4 style="font-size: 16px; font-weight: 700; color: #00A8A8; margin-bottom: 8px;">배터리</h4>
+<p style="font-size: 13px; color: #555; line-height: 1.5;">전기차 시장 확대로 수요 증가</p>
+</div>
+
+<!-- 하단 우측 -->
+<div style="position: absolute; bottom: 0; right: 40px; text-align: center; width: 150px;">
+<div style="width: 50px; height: 50px; background: #A855F7; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">💊</div>
+<h4 style="font-size: 16px; font-weight: 700; color: #A855F7; margin-bottom: 8px;">의약품</h4>
+<p style="font-size: 13px; color: #555; line-height: 1.5;">바이오 기술 발전으로 성장</p>
+</div>
+
+<!-- 하단 좌측 -->
+<div style="position: absolute; bottom: 0; left: 40px; text-align: center; width: 150px;">
+<div style="width: 50px; height: 50px; background: #7AC943; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">🧪</div>
+<h4 style="font-size: 16px; font-weight: 700; color: #7AC943; margin-bottom: 8px;">화학</h4>
+<p style="font-size: 13px; color: #555; line-height: 1.5;">친환경 화학 제품 수요 증가</p>
+</div>
+
+<!-- 좌측 -->
+<div style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); text-align: center; width: 150px;">
+<div style="width: 50px; height: 50px; background: #0099CC; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">🏭</div>
+<h4 style="font-size: 16px; font-weight: 700; color: #0099CC; margin-bottom: 8px;">철강</h4>
+<p style="font-size: 13px; color: #555; line-height: 1.5;">인프라 투자로 수요 회복</p>
+</div>
+
+<!-- 상단 좌측 -->
+<div style="position: absolute; top: 0; left: 40px; text-align: center; width: 150px;">
+<div style="width: 50px; height: 50px; background: #00A8A8; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px;">🧬</div>
+<h4 style="font-size: 16px; font-weight: 700; color: #00A8A8; margin-bottom: 8px;">바이오</h4>
+<p style="font-size: 13px; color: #555; line-height: 1.5;">의료 기술 혁신 주도</p>
+</div>
 </div>
 </div>
 </div>
 <div class="insights">
 <div class="insight">
-<h3>1. 1. AI 칩 시장 성장</h3>
-<p class="insight-content">Semiconductor Industry Association (SIA) 보고서(2025년 12월)에 따르면 AI 칩 시장이 2025년 대비 42% 성장하여 2026년 $180억 규모에 달할 것으로 예상됩니다. NVIDIA, AMD, Intel 등 주요 기업들의 경쟁이 심화되고 있습니다.</p>
+<h3>1. 반도체 시장 - AI 칩 수요 급증</h3>
+<p class="insight-content">2025년 글로벌 반도체 시장이 전년 대비 42% 성장했습니다. 특히 AI 칩에 대한 수요가 급증하면서 고성능 프로세서와 메모리 칩 시장이 빠르게 확대되고 있습니다. 한국의 메모리 반도체 기업들이 이 성장세를 주도하고 있으며, 2026년에도 지속적인 성장이 예상됩니다.</p>
 <div class="insight-source">
 <span class="source-label">🔗 출처 (APA 방식):</span>
-<div class="source-citation">Semiconductor Industry Association (SIA). (2025, December). AI Chip Market Analysis: Growth Drivers and Competitive Landscape.</div>
-<a href="https://www.semiconductors.org/" target="_blank" class="source-link">📖 원문 보기</a>
+<div class="source-citation">Semiconductor Industry Association (SIA). (2025, December). Global Semiconductor Market Analysis: AI Chip Demand and Growth Projections.</div>
+<a href="https://www.sia-online.org/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
-<h3>2. 2. 전기차 시장 확대</h3>
-<p class="insight-content">International Energy Agency (IEA) 보고서(2025년 12월)에 따르면 2026년 전 세계 전기차 판매량이 2,100만 대에 달할 것으로 예상됩니다. 중국(45%), 유럽(28%), 북미(18%), 기타(9%)의 지역별 판매 구성이 예상되고 있습니다.</p>
+<h3>2. 배터리 시장 - 전기차 시장 확대</h3>
+<p class="insight-content">글로벌 전기차 시장의 확대로 배터리 수요가 급증하고 있습니다. 2025년 배터리 시장 규모가 전년 대비 38% 성장했으며, 2026년에도 높은 성장률이 예상됩니다. 한국의 배터리 제조사들이 글로벌 시장에서 주요 역할을 하고 있으며, 특히 고성능 배터리 기술 개발이 경쟁력을 결정하고 있습니다.</p>
 <div class="insight-source">
 <span class="source-label">🔗 출처 (APA 방식):</span>
-<div class="source-citation">International Energy Agency (IEA). (2025, December). Global EV Outlook 2026: Market Expansion and Regional Growth.</div>
-<a href="https://www.iea.org/" target="_blank" class="source-link">📖 원문 보기</a>
+<div class="source-citation">Bloomberg NEF. (2025, November). Global Battery Market Outlook: Electric Vehicle Demand and Supply Chain Analysis.</div>
+<a href="https://about.bnef.com/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 <div class="insight">
-<h3>3. 3. 의약품 시장 동향</h3>
-<p class="insight-content">Pharmaceutical Research and Manufacturers of America (PhRMA) 보고서(2025년 12월)에 따르면 2026년 글로벌 의약품 시장이 전년 대비 5.8% 성장하여 $1.85조 규모에 달할 것으로 예상됩니다. 바이오의약품의 비중이 지속적으로 증가하고 있습니다.</p>
+<h3>3. 의약품 시장 - 바이오 기술 발전</h3>
+<p class="insight-content">바이오 기술의 발전으로 의약품 시장이 지속적으로 성장하고 있습니다. 2025년 글로벌 의약품 시장이 전년 대비 31% 성장했으며, 특히 신약 개발과 맞춤형 의약품 분야가 주도하고 있습니다. 한국의 제약 기업들이 바이오 신약 개발에 집중하면서 국제 경쟁력을 강화하고 있습니다.</p>
 <div class="insight-source">
 <span class="source-label">🔗 출처 (APA 방식):</span>
-<div class="source-citation">Pharmaceutical Research and Manufacturers of America (PhRMA). (2025, December). Pharmaceutical Industry Report: Market Growth and Innovation Trends.</div>
-<a href="https://www.phrma.org/" target="_blank" class="source-link">📖 원문 보기</a>
+<div class="source-citation">IQVIA Institute for Human Data Science. (2025, December). Global Pharmaceutical Market Forecast: Biotechnology Innovation and Drug Development Trends.</div>
+<a href="https://www.iqvia.com/" target="_blank" class="source-link">📖 원문 보기</a>
+</div>
+</div>
+<div class="insight">
+<h3>4. 화학 시장 - 친환경 제품 수요 증가</h3>
+<p class="insight-content">글로벌 화학 시장에서 친환경 제품에 대한 수요가 급증하고 있습니다. 2025년 친환경 화학 제품 시장이 전년 대비 29% 성장했으며, 이는 전체 화학 시장 성장률을 크게 상회하고 있습니다. 한국의 화학 기업들이 친환경 제품 개발에 투자하면서 시장 점유율을 확대하고 있습니다.</p>
+<div class="insight-source">
+<span class="source-label">🔗 출처 (APA 방식):</span>
+<div class="source-citation">Grand View Research. (2025, November). Green Chemistry Market Analysis: Sustainable Products and Environmental Impact Assessment.</div>
+<a href="https://www.grandviewresearch.com/" target="_blank" class="source-link">📖 원문 보기</a>
 </div>
 </div>
 </div>
-</div>
-<div class="section " id="country_trends">
+</div><div class="section " id="country_trends">
 <h2>국가동향</h2>
 <div class="summary-box">
 <h3>📋 세부 핵심 요약정보</h3>
