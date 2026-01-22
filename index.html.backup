@@ -123,7 +123,9 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
       <canvas id="chart_industry_trends">
       </canvas>
      </div>
-    <div class="insights">
+    </div>
+   </div>
+   <div class="insights">
     <div class="insight">
      <h3>
       1. 1. 글로벌 무역 성장 회복
@@ -181,6 +183,7 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
       </a>
      </div>
     </div>
+   </div>
   </div>
   <div class="section" id="raw_material_trends">
    <h2>
@@ -198,7 +201,9 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
       <canvas id="chart_raw_material_trends">
       </canvas>
      </div>
-    <div class="insights">
+    </div>
+   </div>
+   <div class="insights">
     <div class="insight">
      <h3>
       1. 1. 반도체 수급 불균형
@@ -256,6 +261,7 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
       </a>
      </div>
     </div>
+   </div>
   </div>
   <div class="section" id="exchange_rate_trends">
    <h2>
@@ -302,7 +308,9 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
      <p style="color: #999; font-size: 12px; margin-top: 8px;">
       최근 한 달 범위
      </p>
-    <div class="insights">
+    </div>
+   </div>
+   <div class="insights">
     <div class="insight">
      <h3>
       1️⃣ 미국 금리 기대감 약화
@@ -360,6 +368,7 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
       </a>
      </div>
     </div>
+   </div>
   </div>
   <div class="section" id="market_trends">
    <h2>
@@ -509,7 +518,9 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
       <br/>
       AI 기술 발전과 친환경 규제 강화가 주요 성장 동인입니다. 특히 반도체, 배터리, 바이오 시장이 3대 성장 시장으로 부상하고 있으며, 한국 기업들의 기술 경쟁력이 글로벌 시장에서 결정적 역할을 할 것으로 예상됩니다.
      </p>
-    <div class="insights">
+    </div>
+   </div>
+   <div class="insights">
     <div class="insight">
      <h3>
       1️⃣ AI 기술 확산에 따른 반도체 시장 급성장
@@ -586,6 +597,7 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
       </a>
      </div>
     </div>
+   </div>
   </div>
   <div class="section" id="country_trends">
    <h2>
@@ -673,7 +685,9 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
        </p>
       </div>
      </div>
-    <div class="insights">
+    </div>
+   </div>
+   <div class="insights">
     <div class="insight">
      <h3>
       1️⃣ 중국 시장: 경기 부양으로 수출 기회 확대
@@ -750,6 +764,7 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
       </a>
      </div>
     </div>
+   </div>
   </div>
   <div class="section" id="regulatory_trends">
    <h2>
@@ -837,7 +852,9 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
        </p>
       </div>
      </div>
-    <div class="insights">
+    </div>
+   </div>
+   <div class="insights">
     <div class="insight">
      <h3>
       1️⃣ 미국 IRA: 전기차·배터리 산업 규제 강화
@@ -914,6 +931,7 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
       </a>
      </div>
     </div>
+   </div>
   </div>
   <div class="section" id="consumer_trends">
    <h2>
@@ -1001,7 +1019,9 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
        </p>
       </div>
      </div>
-    <div class="insights">
+    </div>
+   </div>
+   <div class="insights">
     <div class="insight">
      <h3>
       1️⃣ 지속가능성 중심의 소비 트렌드
@@ -1078,6 +1098,7 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
       </a>
      </div>
     </div>
+   </div>
   </div>
   <div class="section" id="overseas_certification">
    <h2>
@@ -1252,7 +1273,9 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
        </div>
       </div>
      </div>
-    <div class="insights">
+    </div>
+   </div>
+   <div class="insights">
     <div class="insight">
      <h3>
       1️⃣ 필수 인증 강화: CE Mark, UL, FCC
@@ -1310,6 +1333,7 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
       </a>
      </div>
     </div>
+   </div>
   </div>
   <div class="section" id="overseas_exhibitions">
    <h2>
@@ -1594,7 +1618,9 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
        </tr>
       </tbody>
      </table>
-    <div class="insights">
+    </div>
+   </div>
+   <div class="insights">
     <div class="insight">
      <h3>
       1️⃣ CES 2026: AI·스마트 기기 중심 전시
@@ -1671,6 +1697,7 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
       </a>
      </div>
     </div>
+   </div>
   </div>
   <div class="section" id="esg_trends">
    <h2>
@@ -1748,7 +1775,9 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
        </tbody>
       </table>
      </div>
-    <div class="insights">
+    </div>
+   </div>
+   <div class="insights">
     <div class="insight">
      <h3>
       1️⃣ EU CSRD: ESG 공시 의무화
@@ -1784,6 +1813,7 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
       한국 정부가 K-ESG 기준을 강화하면서 국내 기업들의 ESG 대응이 강화되고 있습니다. 한국 기업들은 K-ESG 기준을 충족하여 국내 시장에서의 신뢰도를 높이고, 글로벌 시장 진출을 가속화해야 합니다.
      </p>
     </div>
+   </div>
   </div>
   <div class="section" id="cbam_trends">
    <h2>
@@ -1801,7 +1831,9 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
       <canvas id="chart_cbam_trends">
       </canvas>
      </div>
-    <div class="insights">
+    </div>
+   </div>
+   <div class="insights">
     <div class="insight">
      <h3>
       1️⃣ CBAM 본격 시행: 탄소세 부과 시작
@@ -1826,6 +1858,7 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
       한국 기업들의 CBAM 대응 전략은 크게 두 가지입니다. 첫째, 생산 과정에서 탄소 배출을 줄이는 탄소 감축 전략입니다. 둘째, EU 내 현지 생산 시설을 구축하여 CBAM 부과를 회피하는 현지화 전략입니다. 한국 기업들은 두 가지 전략을 병행하여 EU 시장에서의 경쟁력을 유지해야 합니다.
      </p>
     </div>
+   </div>
   </div>
   <div class="section" id="sustainability_report">
    <h2>
@@ -1931,7 +1964,9 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
        </tbody>
       </table>
      </div>
-    <div class="insights">
+    </div>
+   </div>
+   <div class="insights">
     <div class="insight">
      <h3>
       1️⃣ 국가별 공시 기준 수렴: ESRS, SEC, ISSB
