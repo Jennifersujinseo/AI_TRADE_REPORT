@@ -1996,7 +1996,34 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
    </div>
   </div>
   <script>
-   function showSection(id, e) { document.querySelectorAll(".section").forEach(s => s.classList.remove("active")); document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active")); document.getElementById(id).classList.add("active"); if (e && e.target) { e.target.classList.add("active"); } window.scrollTo(0, 0); createChart(id); }
+   function showSection(id, e) {
+    // 모든 섹션 비활성화
+    document.querySelectorAll(".section").forEach(s => {
+      s.classList.remove("active");
+      s.style.display = "none";
+    });
+    
+    // 모든 네비게이션 버튼 비활성화
+    document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active"));
+    
+    // 선택된 섹션 활성화
+    const section = document.getElementById(id);
+    if (section) {
+      section.classList.add("active");
+      section.style.display = "block";
+    }
+    
+    // 선택된 버튼 활성화
+    if (e && e.target) {
+      e.target.classList.add("active");
+    }
+    
+    // 페이지 상단으로 스크롤
+    window.scrollTo(0, 0);
+    
+    // 차트 생성
+    setTimeout(() => createChart(id), 100);
+   }
 function createChart(id) {
     const chartConfigs = {
         industry_trends: { type: "bar", labels: ["반도체", "자동차", "석유화학", "철강", "섬유"], data: [15.2, 7.8, 5.4, 3.2, 2.1], colors: ["#0099CC", "#00A8A8", "#A855F7", "#1E90FF", "#FCD34D"] },
@@ -2012,6 +2039,12 @@ function createChart(id) {
     
     const canvas = document.getElementById("chart_" + id);
     if (!canvas) return;
+    
+    // 기존 차트 제거
+    const existingChart = Chart.helpers.getChart(canvas);
+    if (existingChart) {
+      existingChart.destroy();
+    }
     
     const ctx = canvas.getContext("2d");
     const chartConfig = {
