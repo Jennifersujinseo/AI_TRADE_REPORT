@@ -46,7 +46,7 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
 .info-item-title { font-weight: 600; color: #0c4a6e; margin-bottom: 10px; font-size: 1.1em; }
 .info-item-value { font-size: 1.8em; color: #2563eb; font-weight: 700; }
 @media (max-width: 768px) { .summary-content { grid-template-columns: 1fr; } .header h1 { font-size: 1.8em; } }
-.insights { margin-top: 30px; }
+.insights { margin-top: 30px; display: block !important; visibility: visible !important; opacity: 1 !important; }
 .insight { margin-bottom: 35px; padding: 35px; background: linear-gradient(135deg, #f8fafc 0%, #f0f7fc 100%); border-radius: 12px; border-left: 6px solid #0284c7; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.08); transition: all 0.3s ease; }
 .insight h3 { color: #0284c7; margin-bottom: 20px; font-size: 22px; font-weight: 800; letter-spacing: 0.5px; }
 .insight-content { color: #334155; line-height: 2; margin-bottom: 25px; text-align: justify; font-size: 17px; font-weight: 500; }
@@ -2002,6 +2002,12 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
       s.classList.remove("active");
       s.style.display = "none !important";
       s.style.visibility = "hidden";
+      s.style.opacity = "0";
+      // 모든 insights 숨김
+      s.querySelectorAll(".insights").forEach(ins => {
+        ins.style.display = "none !important";
+        ins.style.visibility = "hidden";
+      });
     });
     
     // 모든 네비게이션 버튼 비활성화
@@ -2014,6 +2020,12 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
       section.style.display = "block !important";
       section.style.visibility = "visible";
       section.style.opacity = "1";
+      // 선택된 섹션의 insights만 표시
+      section.querySelectorAll(".insights").forEach(ins => {
+        ins.style.display = "block !important";
+        ins.style.visibility = "visible";
+        ins.style.opacity = "1";
+      });
     }
     
     // 선택된 버튼 활성화
