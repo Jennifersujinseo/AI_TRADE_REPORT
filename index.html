@@ -2030,8 +2030,14 @@ function createChart(id) {
         raw_material_trends: { type: "line", labels: ["1월", "2월", "3월", "4월", "5월", "6월"], data: [85, 88, 92, 95, 98, 102], color: "#0099CC" },
         exchange_rate_trends: { type: "line", labels: ["1주", "2주", "3주", "4주"], data: [1470, 1475, 1478.5, 1480], color: "#00A8A8" },
         market_trends: { type: "pie", labels: ["반도체", "배터리", "의약품", "화학", "기타"], data: [42, 38, 31, 25, 15], colors: ["#0099CC", "#00A8A8", "#A855F7", "#1E90FF", "#FCD34D"] },
+        country_trends: { type: "bar", labels: ["미국", "유럽", "중국", "일본", "한국"], data: [28, 22, 35, 18, 15], colors: ["#0099CC", "#00A8A8", "#A855F7", "#1E90FF", "#FCD34D"] },
+        regulatory_trends: { type: "bar", labels: ["IRA", "CBAM", "희토류", "반도체", "기타"], data: [3690, 2500, 1800, 1200, 900], colors: ["#0099CC", "#00A8A8", "#A855F7", "#1E90FF", "#FCD34D"] },
         consumer_trends: { type: "bar", labels: ["모바일", "소셜", "라이브", "전통", "기타"], data: [28, 35, 42, 15, 10], colors: ["#0099CC", "#00A8A8", "#A855F7", "#1E90FF", "#FCD34D"] },
-        cbam_trends: { type: "bar", labels: ["시멘트", "철강", "알루미늄", "비료", "전기"], data: [15, 18, 12, 8, 10], colors: ["#0099CC", "#00A8A8", "#A855F7", "#1E90FF", "#FCD34D"] }
+        overseas_certification: { type: "pie", labels: ["CE Mark", "UL", "FCC", "ISO", "기타"], data: [35, 25, 20, 15, 5], colors: ["#0099CC", "#00A8A8", "#A855F7", "#1E90FF", "#FCD34D"] },
+        overseas_exhibitions: { type: "bar", labels: ["CES", "MWC", "IFA", "Computex", "기타"], data: [180, 150, 140, 120, 100], colors: ["#0099CC", "#00A8A8", "#A855F7", "#1E90FF", "#FCD34D"] },
+        esg: { type: "line", labels: ["2022", "2023", "2024", "2025", "2026"], data: [45, 58, 72, 85, 95], color: "#0099CC" },
+        cbam_trends: { type: "bar", labels: ["시멘트", "철강", "알루미늄", "비료", "전기"], data: [15, 18, 12, 8, 10], colors: ["#0099CC", "#00A8A8", "#A855F7", "#1E90FF", "#FCD34D"] },
+        sustainability_report: { type: "pie", labels: ["GRI", "SASB", "TCFD", "ISO", "기타"], data: [40, 30, 20, 7, 3], colors: ["#0099CC", "#00A8A8", "#A855F7", "#1E90FF", "#FCD34D"] }
     };
     
     const config = chartConfigs[id];
