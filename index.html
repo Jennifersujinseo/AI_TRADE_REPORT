@@ -2000,7 +2000,8 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
     // 모든 섹션 비활성화
     document.querySelectorAll(".section").forEach(s => {
       s.classList.remove("active");
-      s.style.display = "none";
+      s.style.display = "none !important";
+      s.style.visibility = "hidden";
     });
     
     // 모든 네비게이션 버튼 비활성화
@@ -2010,7 +2011,9 @@ body { font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
     const section = document.getElementById(id);
     if (section) {
       section.classList.add("active");
-      section.style.display = "block";
+      section.style.display = "block !important";
+      section.style.visibility = "visible";
+      section.style.opacity = "1";
     }
     
     // 선택된 버튼 활성화
